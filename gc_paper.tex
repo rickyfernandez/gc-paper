@@ -49,7 +49,7 @@ Globular Clusters
 \end{abstract}
 
 \begin{keywords}
-globular clusters - methods:numerical - cosmology:theory
+globular clusters - methods:numerical
 \end{keywords}
 
 %% ----------------------------------------------------------------
@@ -66,6 +66,14 @@ globular clusters - methods:numerical - cosmology:theory
 \section{Numerical Models}
 \label{sec:numerical}
 \subsection{Numerical Method}
+This simulations were performed with the publicly available Eulerian three-dimensional
+hydrodynamical adpative mesh refinement Enzo code \citep{Bryan2013}. The domain
+box size of the simulation was 150 pc with a top level root grid resolution of $128^3$.
+Cell refinement was dictated by baryon mass and Jeans length with a maximum refinement
+level of 3. Our simulations included self gravity and radiative cooling using the
+Grackle library; details described in \cite{Bryan2013}. The metal heating and
+cooling rates are provided from \cite{Haardt2012}.
+
 \subsection{Initial Conditions}
 
 %% ----------------------------------------------------------------
@@ -90,7 +98,7 @@ globular clusters - methods:numerical - cosmology:theory
 %% ----------------------------------------------------------------
 % 
 \section*{Acknowledgments}
-%\bibliography{mn-jour,adssample}
+\bibliography{mn-jour,gc_paper}
 %
 %\label{lastpage}
 \end{document}
