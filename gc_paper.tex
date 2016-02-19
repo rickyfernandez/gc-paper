@@ -67,7 +67,7 @@ globular clusters - methods:numerical
 \label{sec:numerical}
 \subsection{Numerical Method}
 This simulations were performed with the publicly available Eulerian three-dimensional
-hydrodynamical adpative mesh refinement Enzo code \citep{Bryan2013}. The domain
+hydrodynamical adaptive mesh refinement Enzo code \citep{Bryan2013}. The domain
 box size of the simulation was 150 pc with a top level root grid resolution of $128^3$.
 Cell refinement was dictated by baryon mass and Jeans length with a maximum refinement
 level of 3. Our simulations included self gravity and radiative cooling using the
@@ -75,6 +75,16 @@ Grackle library; details described in \cite{Bryan2013}. The metal heating and
 cooling rates are provided from \cite{Haardt2012}.
 
 \subsection{Initial Conditions}
+Our initial conditions consisted of a cloud in pressure equilibrium with an
+ambient density and temperature background. The internal structure of the
+cloud is modeled by a Bonner-Ebert sphere \cite{Bonnor1956}; a self-gravitating
+isothermal gas sphere in hydrostatic equilibrium embedded in a pressurized  
+medium. To fully describe a Bonner-Ebert sphere, a mass $M_{BE}$, temperature
+$T_{BE}$, and an external pressure $P_{ext}$ must be chosen. Following our
+assumptions outlined in Section~\ref{sec:basic}, we choosed
+$M_{BE}=10^6$ \msun, $T_{BE}=6000$ K, and $P_{ext}=1.8\times10^5\times k_B$
+($k_B$ : Boltzmann constant). This corresponds to a cloud on the cusp where
+heating and cooling balance. 
 
 %% ----------------------------------------------------------------
 % 
