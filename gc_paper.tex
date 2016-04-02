@@ -74,6 +74,49 @@ As an aside, we note that, quite recently, observations have demonstrated that g
 
 In this paper, we explore a simple idea: can the cooling properties of low-metallicity gas clouds themselves influence how star formation proceeds?  High-metallicity (by which we mean approximately solar metallicity, or even lower -- we will address this point more precisely below) gas cools rapidly, typically on a timescale shorter than the dynamical time, meaning that present day large gas clouds, with masses in the GC range, are typically ``cold", with temperatures well below their virial temperatures and so rapid fragmentation is inevitable.  This generally means that high-metallicity giant molecular clouds will rapidly produce stars before they are completely collapsed and feedback from those stars will result in a low star formation efficiency (REF).  However, for a low enough metallicity, the gas may cool slowly so that the cloud will collapse coherently, not fragmenting until the central gas density is very high.  These high densities promote rapid star formation resulting in high efficiency.  In this way, paradoxically, inefficient cooling may result in more efficiency star formation.
 
+To futher investigate this simple idea we have created one zone models of a cooling parcel of gas. In 
+this scenario, the parameter space consits of density, temperature, and metallicity. Once the parameters
+are choosen the gas is allowed to cool. The quanity of interest is the ratio of the absolute value of cooling
+time to dynamical time $|t_{cool}|/t_{dyn}|$. In our simple one zone model cooling is computed using the
+publicily available grackle chemistry library; details of implementation and functionality can be found
+in \cite{Bryan2013}.
+\begin{figure}
+\begin{center}
+\mbox{\includegraphics[width=8.5cm]{Images/cooling_to_freefall_no_background}}
+\end{center}
+\caption{\label{fig:cooling_to_freefall}} Density slice at $t=19.4$ Myr for run with
+cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$. In this run cooling is
+not efficient and gravity takes over forming a dense core. 
+\end{figure}
+
+In Figure~\ref{fig:cooling_to_freefall}, is a panel of heat maps of log$(|t_{cool}|/t_{dyn})$
+for metallicity values $Z/Z_{\odot}=10^{-3},10^{-2},10^{-1},1$. In the top left corner of Fig~\ref{fig:cooling_to_freefall}
+there are two regions where cooling and dynamical time are comparable. The first is in the temperature range of
+$10^1-10^4$K, the sharp cutoff at $10^4$K is due to efficient cooling, and the second is in the bottom right
+corner. It is the former region that we are most interested because this region is most likely to have
+typical values for globular cluster formation. Over each heat map Bonner-Ebert (see ~\ref{sec:numerical} for discription) curves
+are overlayed for different mass sizes. It is clear from the plot, for gas clouds of typical mass of globular cluster, ther are 
+valuse in the region where cooling is ineffective effectively allowing the gas to collapse coherently. Further, as the metallicity
+increases this region becomes less pronounce and the gas becomes more efficent in cooling allowing the gas to cool and fragment
+before global collapse sets in.
+\begin{figure}
+\begin{center}
+\mbox{\includegraphics[width=8.5cm]{Images/cooling_to_freefall}}
+\end{center}
+\caption{\label{fig:cooling_to_freefall_background}} Density slice at $t=19.4$ Myr for run with
+cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$. In this run cooling is
+not efficient and gravity takes over forming a dense core. 
+\end{figure}
+
+In Figure ~\ref{fig:cooling_to_freefall_background}, the one zone models are recalculated as previous except allowing
+for heating; where heating can be from nearby star fromation. In this situation, an equillibrium curve is present where
+heating and cooling are balanced. We no longer have the extended region where cooling and dynamical time scales are 
+comparable but know are concentrated along the equillibrium curve. Furthemore, it should be expected that these values should
+natuarally seek the equillibrium curve. Therefore, for values above and below the curve there should be a migration
+to high density low temperature for values above and low density high temperature for values below. Moreover, when the
+the metallicity increase the equilibrium curve shifts downward, decreasing the possibility of having globular cluster
+like conditions.
+
 % more...
 
 
@@ -115,7 +158,7 @@ $v_k^2 \propto k^{-4}$ for the velocity field.
 \subsection{No Heating Runs}
 \begin{figure}
 \begin{center}
-\includegraphics[width=8.5cm]{Images/density_series}
+\includegraphics[width=8.5cm]{Images/density_series-eps-converted-to}
 \includegraphics[width=8.5cm]{Images/temperature_series}
 \end{center}
 \caption{\label{fig:profile_turbulence}} Cell weighted profiles for density
