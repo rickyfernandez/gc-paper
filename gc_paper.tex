@@ -75,51 +75,47 @@ As an aside, we note that, quite recently, observations have demonstrated that g
 In this paper, we explore a simple idea: can the cooling properties of low-metallicity gas clouds themselves influence how star formation proceeds?  High-metallicity (by which we mean approximately solar metallicity, or even lower -- we will address this point more precisely below) gas cools rapidly, typically on a timescale shorter than the dynamical time, meaning that present day large gas clouds, with masses in the GC range, are typically ``cold", with temperatures well below their virial temperatures and so rapid fragmentation is inevitable.  This generally means that high-metallicity giant molecular clouds will rapidly produce stars before they are completely collapsed and feedback from those stars will result in a low star formation efficiency (REF).  However, for a low enough metallicity, the gas may cool slowly so that the cloud will collapse coherently, not fragmenting until the central gas density is very high.  These high densities promote rapid star formation resulting in high efficiency.  In this way, paradoxically, inefficient cooling may result in more efficiency star formation.
 
 To futher investigate this simple idea we have created one zone models of a cooling parcel of gas. In 
-this scenario, the parameter space consits of density, temperature, and metallicity. Once the parameters
-are choosen the gas is allowed to cool. The quanity of interest is the ratio of the absolute value of cooling
-time to dynamical time $|t_{cool}|/t_{dyn}|$. In our simple one zone model cooling is computed using the
-publicily available grackle chemistry library; details of implementation and functionality can be found
+this scenario, the parameter space consists of density, temperature, and metallicity. Once the parameters
+are chosen the evolutionary timescales are computed: the quantity of interest is the ratio of the absolute value of cooling
+time to dynamical time $|t_{cool}|/t_{dyn}|$. In our simple one zone model, cooling is computed using the
+publicily available \textsc{grackle} chemistry library; details of implementation and functionality can be found
 in \cite{Bryan2013}.
 \begin{figure}
 \begin{center}
 \mbox{\includegraphics[width=8.5cm]{Images/cooling_to_freefall_no_background}}
 \end{center}
-\caption{\label{fig:cooling_to_freefall}} Density slice at $t=19.4$ Myr for run with
-cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$. In this run cooling is
-not efficient and gravity takes over forming a dense core. 
+\caption{\label{fig:cooling_to_freefall}} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.
 \end{figure}
 
-In Figure~\ref{fig:cooling_to_freefall}, is a panel of heat maps of log$(|t_{cool}|/t_{dyn})$
-for metallicity values $Z/Z_{\odot}=10^{-3},10^{-2},10^{-1},1$. In the top left corner of Fig~\ref{fig:cooling_to_freefall}
-there are two regions where cooling and dynamical time are comparable. The first is in the temperature range of
-$10^1-10^4$K, the sharp cutoff at $10^4$K is due to efficient cooling, and the second is in the bottom right
-corner. It is the former region that we are most interested because this region is most likely to have
-typical values for globular cluster formation. Over each heat map Bonner-Ebert (see ~\ref{sec:numerical} for discription) curves
-are overlayed for different mass sizes. It is clear from the plot, for gas clouds of typical mass of globular cluster, ther are 
-valuse in the region where cooling is ineffective effectively allowing the gas to collapse coherently. Further, as the metallicity
-increases this region becomes less pronounce and the gas becomes more efficent in cooling allowing the gas to cool and fragment
-before global collapse sets in.
+Figure~\ref{fig:cooling_to_freefall} is a panel showing the ratio of log$(|t_{cool}|/t_{dyn})$
+for metallicity values $Z/Z_{\odot}=10^{-3},10^{-2},10^{-1},1$.  To begin, we focus on the lowest metallicity 
+(upper-left) panel of Fig~\ref{fig:cooling_to_freefall} -- we see that there
+are two regions where cooling and dynamical time are comparable (shaded red). The first is in the temperature range$10^1-10^4$K (the sharp cutoff at $10^4$K is due to efficient cooling from HI line emission), and the second is in the bottom right
+corner. It is the former region in which we are most interested because this area is where we expect to find gas clouds with
+values conducive for globular cluster formation. Over each heat map, we plot lines of density and temperature corresponding to constant Bonner-Ebert mass (see Section~\ref{sec:numerical} for details on how this is computed). It is clear from the plot that,
+for gas clouds with masses typical of globular clusters, there are 
+values in the region where cooling is relatively inefficient, allowing the gas to collapse coherently before it can cool and fragment. Further, as the metallicity
+increases this region becomes less pronounced and the gas becomes more efficient in cooling, which will allow the gas to cool and fragment before global collapse sets in.
+
 \begin{figure}
 \begin{center}
 \mbox{\includegraphics[width=8.5cm]{Images/cooling_to_freefall}}
 \end{center}
-\caption{\label{fig:cooling_to_freefall_background}} Density slice at $t=19.4$ Myr for run with
-cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$. In this run cooling is
-not efficient and gravity takes over forming a dense core. 
+\caption{\label{fig:cooling_to_freefall_background}} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.  This plot is similar to Figure~\ref{fig:cooling_to_freefall}, except that we include a radiative heating source as specified in \citet{Haardt2012}, at $z=$??.
 \end{figure}
 
-In Figure ~\ref{fig:cooling_to_freefall_background}, the one zone models are recalculated as previous except allowing
-for heating; where heating can be from nearby star fromation. In this situation, an equillibrium curve is present where
+This is all computed in the absence of any radiative background.  In Figure~\ref{fig:cooling_to_freefall_background}, 
+the one zone models are recalculated as previous except allowing for radiative heating.   Although the radiative background
+is uncertain, we adopt the radiative background from \citet{Haardt2012} at $z=$??? 
+in order to show the kind of effect we expect.  This does not change the high gas cooling rate, but it does affect the lower-temperature gas cooling time.   In particular, we see that an equilibrium curve is present where
 heating and cooling are balanced. We no longer have the extended region where cooling and dynamical time scales are 
-comparable but know are concentrated along the equillibrium curve. Furthemore, it should be expected that these values should
-natuarally seek the equillibrium curve. Therefore, for values above and below the curve there should be a migration
-to high density low temperature for values above and low density high temperature for values below. Moreover, when the
+comparable but now are concentrated along the equilibrium curve. Furthermore, it should be expected that gas will
+naturally seek the equilibrium curve values. Therefore, for values above and below the curve there should be a migration
+to high density low temperature for values above and low density high temperature for values below.  Moreover, when the
 the metallicity increase the equilibrium curve shifts downward, decreasing the possibility of having globular cluster
 like conditions.
 
-% more...
-
-
+This is all determine by computing cooling and dynamical times for gas with a characteristic density and temperature, demonstrating that the idea of inefficient cooling may be appropriate for low-metallicity gas (or gas with a somewhat higher metallicity but stronger radiative background).   We now turn to space- and time-dependent numerical simulations to explore this idea further.  Ideally, we would carry out cosmological simulations that included the full range of dynamical processes relevant for star formation at high-redshift with low (but non-zero) metallicity.  However, this is computational intractable, and therefore we instead investigate a simple, idealized set up.  We expect that gas cloud collisions during mergers at high-redshift will result in the accumulation of gas in relatively dense knows.  These clouds will rapidly cool to temperatures around $10^4$ K.  Therefore, we set up turbulently perturbed Bonner-Ebbert spheres with masses typical of globular clusters, and densities/metallicities motivated by Figure~\ref{fig:cooling_to_freefall}.   In future work, we will explore more complicated dynamics, such as colliding flows; however, here we explore perhaps the most simple possible test of this idea.
 
 
 
@@ -128,16 +124,22 @@ like conditions.
 \section{Numerical Models}
 \label{sec:numerical}
 \subsection{Numerical Method}
+
 This simulations were performed with the publicly available Eulerian three-dimensional
 hydrodynamical adaptive mesh refinement Enzo code \citep{Bryan2013}. The domain
-box size of the simulation was 150 pc with a top level root grid resolution of $128^3$.
-Cell refinement was dictated by baryon mass and Jeans length with a maximum refinement
-level of 3. Our simulations included self gravity and radiative cooling using the
-Grackle library; details described in \cite{Bryan2013}. The metal heating and
-cooling rates are provided from \cite{Haardt2012}.
+box size of the simulation was 150 pc with a top level root grid resolution of $128^3$, and
+a maximum refinement level of 3 for a cell size of 0.125 pc.  Cell refinement was dictated 
+by baryon mass such that a cell was refined whenever the its mass became larger than XXX 
+\msun as well as a refinement based on the Jeans length such that the Jeans length was
+always refined by XXX cells. 
+Our simulations included self gravity and radiative cooling using the
+Grackle library; details described in \cite{Bryan2013}. The metal cooling (and
+heating) rates are computed using a non-equilibrium model for H, H$^+$, He, He$^+$, He$^++$ and e$^-$
+and a table computed from Cloudy for metal-line cooling (and heating), as described in Smith et al. (????).
+When a radiative background is included, we use \cite{Haardt2012} at $z=$???.
 
 \subsection{Initial Conditions}
-Our initial conditions consisted of a cloud in pressure equilibrium with an
+Our initial conditions consist of a cloud in pressure equilibrium with an
 ambient density and temperature background. The internal structure of the
 cloud is modeled by a Bonner-Ebert sphere \cite{Bonnor1956}; a self-gravitating
 isothermal gas sphere in hydrostatic equilibrium embedded in a pressurized  
@@ -149,7 +151,10 @@ $M_{BE}=10^6$ \msun, $T_{BE}=6000$ K, and $P_{ext}=1.8\times10^5\times k_B$
 heating and cooling balance. 
 
 In addition, we add turbulence to the cloud following a power spectrum of
-$v_k^2 \propto k^{-4}$ for the velocity field.
+$v_k^2 \propto k^{-4}$ for the velocity field.  We include only models between
+$k_{\rm min}=$??? and $k_{\rm max} = $??? such that the input modes are well resolved
+and have wavelengths smaller than the cloud radius.  We set the turbulent velocites
+such that rms velocity of the gas is XXX km/s.
 
 %% ----------------------------------------------------------------
 % 
