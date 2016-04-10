@@ -77,7 +77,7 @@ In this paper, we explore a simple idea: can the cooling properties of low-metal
 To futher investigate this simple idea we have created one zone models of a cooling parcel of gas. In 
 this scenario, the parameter space consists of density, temperature, and metallicity. Once the parameters
 are chosen the evolutionary timescales are computed: the quantity of interest is the ratio of the absolute value of cooling
-time to dynamical time $|t_{cool}|/t_{dyn}|$. In our simple one zone model, cooling is computed using the
+time to dynamical time $|t_{cool}|/t_{dyn}$. In our simple one zone model, cooling is computed using the
 publicily available \textsc{grackle} chemistry library; details of implementation and functionality can be found
 in \cite{Bryan2013}.
 \begin{figure}
@@ -90,7 +90,7 @@ in \cite{Bryan2013}.
 Figure~\ref{fig:cooling_to_freefall} is a panel showing the ratio of log$(|t_{cool}|/t_{dyn})$
 for metallicity values $Z/Z_{\odot}=10^{-3},10^{-2},10^{-1},1$.  To begin, we focus on the lowest metallicity 
 (upper-left) panel of Fig~\ref{fig:cooling_to_freefall} -- we see that there
-are two regions where cooling and dynamical time are comparable (shaded red). The first is in the temperature range$10^1-10^4$K (the sharp cutoff at $10^4$K is due to efficient cooling from HI line emission), and the second is in the bottom right
+are two regions where cooling and dynamical time are comparable (shaded red). The first is in the temperature range $10^1-10^4$K (the sharp cutoff at $10^4$K is due to efficient cooling from HI line emission), and the second is in the bottom right
 corner. It is the former region in which we are most interested because this area is where we expect to find gas clouds with
 values conducive for globular cluster formation. Over each heat map, we plot lines of density and temperature corresponding to constant Bonner-Ebert mass (see Section~\ref{sec:numerical} for details on how this is computed). It is clear from the plot that,
 for gas clouds with masses typical of globular clusters, there are 
@@ -101,12 +101,12 @@ increases this region becomes less pronounced and the gas becomes more efficient
 \begin{center}
 \mbox{\includegraphics[width=8.5cm]{Images/cooling_to_freefall}}
 \end{center}
-\caption{\label{fig:cooling_to_freefall_background}} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.  This plot is similar to Figure~\ref{fig:cooling_to_freefall}, except that we include a radiative heating source as specified in \citet{Haardt2012}, at $z=$??.
+\caption{\label{fig:cooling_to_freefall_background}} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.  This plot is similar to Figure~\ref{fig:cooling_to_freefall}, except that we include a radiative heating source as specified in \citet{Haardt2012}, at $z=$0
 \end{figure}
 
 This is all computed in the absence of any radiative background.  In Figure~\ref{fig:cooling_to_freefall_background}, 
 the one zone models are recalculated as previous except allowing for radiative heating.   Although the radiative background
-is uncertain, we adopt the radiative background from \citet{Haardt2012} at $z=$??? 
+is uncertain, we adopt the radiative background from \citet{Haardt2012} at $z=$0 
 in order to show the kind of effect we expect.  This does not change the high gas cooling rate, but it does affect the lower-temperature gas cooling time.   In particular, we see that an equilibrium curve is present where
 heating and cooling are balanced. We no longer have the extended region where cooling and dynamical time scales are 
 comparable but now are concentrated along the equilibrium curve. Furthermore, it should be expected that gas will
@@ -129,14 +129,14 @@ This simulations were performed with the publicly available Eulerian three-dimen
 hydrodynamical adaptive mesh refinement Enzo code \citep{Bryan2013}. The domain
 box size of the simulation was 150 pc with a top level root grid resolution of $128^3$, and
 a maximum refinement level of 3 for a cell size of 0.125 pc.  Cell refinement was dictated 
-by baryon mass such that a cell was refined whenever the its mass became larger than XXX 
-\msun as well as a refinement based on the Jeans length such that the Jeans length was
-always refined by XXX cells. 
+by baryon mass such that a cell was refined whenever the its mass became larger than 0.1 M$_\odot$ as
+well as a refinement based on the Jeans length such that the Jeans length was
+always refined by 4 cells. 
 Our simulations included self gravity and radiative cooling using the
 Grackle library; details described in \cite{Bryan2013}. The metal cooling (and
 heating) rates are computed using a non-equilibrium model for H, H$^+$, He, He$^+$, He$^++$ and e$^-$
 and a table computed from Cloudy for metal-line cooling (and heating), as described in Smith et al. (????).
-When a radiative background is included, we use \cite{Haardt2012} at $z=$???.
+When a radiative background is included, we use \cite{Haardt2012} at $z=$0
 
 \subsection{Initial Conditions}
 Our initial conditions consist of a cloud in pressure equilibrium with an
@@ -152,9 +152,21 @@ heating and cooling balance.
 
 In addition, we add turbulence to the cloud following a power spectrum of
 $v_k^2 \propto k^{-4}$ for the velocity field.  We include only models between
-$k_{\rm min}=$??? and $k_{\rm max} = $??? such that the input modes are well resolved
+$k_{\rm min}=$ 9 and $k_{\rm max} =$ 19 such that the input modes are well resolved
 and have wavelengths smaller than the cloud radius.  We set the turbulent velocites
-such that rms velocity of the gas is XXX km/s.
+such that rms velocity of the gas is XXX km/s. Figure~\ref{fig:initial_setup} is a panel
+of the initial number density, temperatue, velocity magnitude and pressure for all the
+simulations in discussion.
+\begin{figure}
+\begin{center}
+\includegraphics[width=4.0cm]{Images/Initial_number_density}
+\includegraphics[width=4.0cm]{Images/Initial_temperature}
+\includegraphics[width=4.0cm]{Images/Initial_velocity_magnitude}
+\includegraphics[width=4.0cm]{Images/Initial_pressure}
+\end{center}
+\caption{\label{fig:initial_setup}} Slices of inital number density, temperature, velocity magnitude
+and pressure for all simulations in this paper. 
+\end{figure}
 
 %% ----------------------------------------------------------------
 % 
@@ -170,15 +182,15 @@ such that rms velocity of the gas is XXX km/s.
 and temperature at give output times for run with cooling, turbulence, and
 metallicity of $Z=10^{-3}Z_\odot$.
 \end{figure}
-In the left hand panel of Figure~\ref{fig:profile_turbulence}, are density profiles at given time steps.
+In the top hand panel of Figure~\ref{fig:profile_turbulence}, are density profiles given at multiple time steps for the $Z=10^{-3}Z_\odot$ run.
 The cloud, which initially stable, starts to change dynamically due the added
 turbulence and cooling. The the free fall time of the cloud is $t_{ff}\approx 6$
 Myr. However, the added pressure due to turbulence has prolonged any large scale
 collapse. Noting the several outputs, the cloud initially starts to drive mass
 outward. This is due the increase in pressure from turbulence. The outter rim
-of the cloud begins to drive outward decreasing the amount of mass in each radi.
+of the cloud begins to drive outward decreasing the amount of mass in each radii.
 The expansion only last for $\approx 15$ Myr. At this point, gravitational
-collapse sets in and the formation of a core begins, see Figure 2. The right
+collapse sets in and the formation of a core begins, see Figure~\ref{fig:slice_turbulence}. The bottom
 hand panel of Figure~\ref{fig:profile_turbulence}, demonstrates the inability of the cloud to cool
 sufficiently. As expected from the one zone model, the cloud cannot efficiently
 cool before global gravitational collapse sets in.
@@ -189,6 +201,30 @@ cool before global gravitational collapse sets in.
 \caption{\label{fig:slice_turbulence}} Density slice at $t=19.4$ Myr for run with
 cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$. In this run cooling is
 not efficient and gravity takes over forming a dense core. 
+\end{figure}
+\begin{figure}
+\begin{center}
+\mbox{\includegraphics[width=8.5cm]{Images/temperature_series_0_01}}
+\end{center}
+\caption{\label{fig:temperature_series}} Cell weighted temperature profiles
+at given output times for run with cooling, turbulence, and
+metallicity of $Z=10^{-2}Z_\odot$.
+\end{figure}
+
+We repeat the previous run except we change the metallicity to $Z=10^{-2}Z_\odot$. In this case there is a significant difference in the run.
+The gas is now allowed to cool efficiently, as evident in the temperature profiles -- see Figure~\ref{fig:temperature_series}. The center
+of the gas cloud, up to radii of $\approx 10$ pc, has cooled to $\approx 200$ K in less than a million years. The added effect of the turbulence
+allows the cold gas to condense into dense pockets. Therefore, reaching higher densities untill local fragmentation sets in.
+In Figure~\ref{fig:density_turbulence_0_01}, it is apparent from the density knots that local fragmentation has set in disallowing the gas
+to collapse globally at time 2.25 Myr. Hence, our numerical runs agree with our simple one zone models. Moreover, we find that there is a critical metallicity
+between $10^{-3}-10^{-2}Z_\odot$ that seperates the evolution of gas cloud into either global gravitational collapse or local fragmentation. 
+\begin{figure}
+\begin{center}
+\mbox{\includegraphics[width=8.5cm]{Images/density_slice_0_01}}
+\end{center}
+\caption{\label{fig:density_turbulence_0_01}} Density slice at $t=2.25$ Myr for run with
+cooling, turbulence, and metallicity of $Z=10^{-2}Z_\odot$. In this run cooling is
+efficient causing local fragmentation. 
 \end{figure}
 
  
