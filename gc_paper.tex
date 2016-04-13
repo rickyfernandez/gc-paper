@@ -84,7 +84,7 @@ in \cite{Bryan2013}.
 \begin{center}
 \mbox{\includegraphics[width=8.5cm]{Images/cooling_to_freefall_no_background}}
 \end{center}
-\caption{\label{fig:cooling_to_freefall}} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.
+\caption{\label{fig:cooling_to_freefall} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.}
 \end{figure}
 
 Figure~\ref{fig:cooling_to_freefall} is a panel showing the ratio of log$(|t_{cool}|/t_{dyn})$
@@ -101,7 +101,7 @@ increases this region becomes less pronounced and the gas becomes more efficient
 \begin{center}
 \mbox{\includegraphics[width=8.5cm]{Images/cooling_to_freefall}}
 \end{center}
-\caption{\label{fig:cooling_to_freefall_background}} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.  This plot is similar to Figure~\ref{fig:cooling_to_freefall}, except that we include a radiative heating source as specified in \citet{Haardt2012}, at $z=$0
+\caption{\label{fig:cooling_to_freefall_background} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.  This plot is similar to Figure~\ref{fig:cooling_to_freefall}, except that we include a radiative heating source as specified in \citet{Haardt2012}, at $z=$0.}
 \end{figure}
 
 This is all computed in the absence of any radiative background.  In Figure~\ref{fig:cooling_to_freefall_background}, 
@@ -125,13 +125,14 @@ This is all determine by computing cooling and dynamical times for gas with a ch
 \label{sec:numerical}
 \subsection{Numerical Method}
 
-This simulations were performed with the publicly available Eulerian three-dimensional
+The simulations in this paper were performed with the publicly available Eulerian three-dimensional
 hydrodynamical adaptive mesh refinement Enzo code \citep{Bryan2013}. The domain
-box size of the simulation was 150 pc with a top level root grid resolution of $128^3$, and
-a maximum refinement level of 3 for a cell size of 0.125 pc.  Cell refinement was dictated 
-by baryon mass such that a cell was refined whenever the its mass became larger than 0.1 M$_\odot$ as
-well as a refinement based on the Jeans length such that the Jeans length was
-always refined by 4 cells. 
+box size of the simulation was 150 pc on a side with a top level root grid resolution of $128^3$, and
+a maximum refinement level of 3, for a cell size of 0.125 pc.  Cell refinement was dictated 
+by the gas mass such that a cell was refined whenever the its mass became larger than 0.1 M$_\odot$.
+In addition, we refined based on the Jeans length such that it was
+always refined by at least 4 cells.
+
 Our simulations included self gravity and radiative cooling using the
 Grackle library; details described in \cite{Bryan2013}. The metal cooling (and
 heating) rates are computed using a non-equilibrium model for H, H$^+$, He, He$^+$, He$^++$ and e$^-$
@@ -140,23 +141,26 @@ When a radiative background is included, we use \cite{Haardt2012} at $z=$0
 
 \subsection{Initial Conditions}
 Our initial conditions consist of a cloud in pressure equilibrium with an
-ambient density and temperature background. The internal structure of the
-cloud is modeled by a Bonner-Ebert sphere \cite{Bonnor1956}; a self-gravitating
+constant ambient density and temperature background. The internal structure of the
+cloud is modeled by a Bonner-Ebert sphere \cite{Bonnor1956}: a self-gravitating
 isothermal gas sphere in hydrostatic equilibrium embedded in a pressurized  
 medium. To fully describe a Bonner-Ebert sphere, a mass $M_{BE}$, temperature
 $T_{BE}$, and an external pressure $P_{ext}$ must be chosen. Following our
-assumptions outlined in Section~\ref{sec:basic}, we choosed
-$M_{BE}=10^6$ \msun, $T_{BE}=6000$ K, and $P_{ext}=1.8\times10^5\times k_B$
-($k_B$ : Boltzmann constant). This corresponds to a cloud on the cusp where
-heating and cooling balance. 
+assumptions outlined in Section~\ref{sec:basic}, we chose
+$M_{BE}=10^6$ \msun, $T_{BE}=6000$ K, and $P_{ext}=1.8\times10^5\times k_B$, 
+where $k_B$ is the Boltzmann constant. This corresponds to a cloud on the point of
+gravitational collapse within nearly comparable cooling and collapse times,
+depending the chosen metallicity (which we will vary).
 
 In addition, we add turbulence to the cloud following a power spectrum of
-$v_k^2 \propto k^{-4}$ for the velocity field.  We include only models between
-$k_{\rm min}=$ 9 and $k_{\rm max} =$ 19 such that the input modes are well resolved
-and have wavelengths smaller than the cloud radius.  We set the turbulent velocites
-such that rms velocity of the gas is XXX km/s. Figure~\ref{fig:initial_setup} is a panel
-of the initial number density, temperatue, velocity magnitude and pressure for all the
-simulations in discussion.
+$v_k^2 \propto k^{-4}$ for the velocity field.  We include only mode between
+$k_{\rm min}=$ 9 and $k_{\rm max} =$ 19 {\bf (units?)} such that the input modes are well resolved
+and have wavelengths smaller than the cloud radius.  We set the turbulent velocities
+such that rms velocity of the gas is XXX km/s. Figure~\ref{fig:initial_setup} shows 
+a slice through the center of the cloud with four panels providing
+the initial number density, temperature, velocity magnitude and pressure.  We use
+this initial conditions for essentially all of the runs analyzed in this paper.
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=4.0cm]{Images/Initial_number_density}
@@ -164,51 +168,60 @@ simulations in discussion.
 \includegraphics[width=4.0cm]{Images/Initial_velocity_magnitude}
 \includegraphics[width=4.0cm]{Images/Initial_pressure}
 \end{center}
-\caption{\label{fig:initial_setup}} Slices of inital number density, temperature, velocity magnitude
-and pressure for all simulations in this paper. 
+\caption{\label{fig:initial_setup} Slices showing the number density, temperature, velocity magnitude
+and pressure for the initial conditions used in this paper. }
 \end{figure}
 
 %% ----------------------------------------------------------------
 % 
 \section{Results}
 \label{sec:results}
+
+We now carry out a set of simulations exploring the evolution of this cloud under a variety of conditions, with a particular emphasis on the impact of metallicity on their evolution.  We begin, for simplicity, with models without any radiative background.
+
 \subsection{No Heating Runs}
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=8.5cm]{Images/density_series-eps-converted-to}
 \includegraphics[width=8.5cm]{Images/temperature_series}
 \end{center}
-\caption{\label{fig:profile_turbulence}} Cell weighted profiles for density
-and temperature at give output times for run with cooling, turbulence, and
-metallicity of $Z=10^{-3}Z_\odot$.
+\caption{\label{fig:profile_turbulence} Cell {\bf (volume or mass?)} weighted profiles for 
+the density (top panel) and temperature (bottom panel) as a function of radius at various 
+output times, as shown, for runs with cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$.}
 \end{figure}
-In the top hand panel of Figure~\ref{fig:profile_turbulence}, are density profiles given at multiple time steps for the $Z=10^{-3}Z_\odot$ run.
-The cloud, which initially stable, starts to change dynamically due the added
-turbulence and cooling. The the free fall time of the cloud is $t_{ff}\approx 6$
-Myr. However, the added pressure due to turbulence has prolonged any large scale
-collapse. Noting the several outputs, the cloud initially starts to drive mass
-outward. This is due the increase in pressure from turbulence. The outter rim
-of the cloud begins to drive outward decreasing the amount of mass in each radii.
-The expansion only last for $\approx 15$ Myr. At this point, gravitational
+
+We start with a low metallicity gas -- adopting $Z=10^{-3}Z_\odot$ puts us well into the regime
+where the gas cooling time is longer than the gravitational collapse time (see the previous section).
+In the top panel of Figure~\ref{fig:profile_turbulence}, we show density profiles at a range of times during
+the collapse.  The cloud, which is initially stable, starts to evolve due both to the added
+turbulence and to gravity+cooling. The free fall time of the cloud is $t_{ff}\approx 6$
+Myr.  However, the slow cooling time delays the immediate large scale collapse.
+This can be see by the flat density profiles at times earlier than 15 Myr. 
+In fact, the cloud initially starts to drive mass outward, due to the increase in pressure 
+from the added turbulence. The outer rim
+of the cloud begins to move outward, initially decreasing the amount of mass in each radii.
+The expansion only lasts for $\approx 10$ Myr. At that point, gravitational
 collapse sets in and the formation of a core begins, see Figure~\ref{fig:slice_turbulence}. The bottom
 hand panel of Figure~\ref{fig:profile_turbulence}, demonstrates the inability of the cloud to cool
 sufficiently. As expected from the one zone model, the cloud cannot efficiently
 cool before global gravitational collapse sets in.
+
 \begin{figure}
 \begin{center}
 \mbox{\includegraphics[width=8.5cm]{Images/density_slice}}
 \end{center}
-\caption{\label{fig:slice_turbulence}} Density slice at $t=19.4$ Myr for run with
+\caption{\label{fig:slice_turbulence} Density slice at $t=19.4$ Myr for run with
 cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$. In this run cooling is
-not efficient and gravity takes over forming a dense core. 
+not efficient and gravity takes over forming a dense core. }
 \end{figure}
 \begin{figure}
 \begin{center}
 \mbox{\includegraphics[width=8.5cm]{Images/temperature_series_0_01}}
 \end{center}
-\caption{\label{fig:temperature_series}} Cell weighted temperature profiles
+\caption{\label{fig:temperature_series} Cell weighted temperature profiles
 at given output times for run with cooling, turbulence, and
-metallicity of $Z=10^{-2}Z_\odot$.
+metallicity of $Z=10^{-2}Z_\odot$.}
 \end{figure}
 
 We repeat the previous run except we change the metallicity to $Z=10^{-2}Z_\odot$. In this case there is a significant difference in the run.
