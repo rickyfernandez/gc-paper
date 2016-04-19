@@ -165,11 +165,9 @@ this initial conditions for essentially all of the runs analyzed in this paper.
 \begin{center}
 \includegraphics[width=4.0cm]{Images/Initial_number_density}
 \includegraphics[width=4.0cm]{Images/Initial_temperature}
-\includegraphics[width=4.0cm]{Images/Initial_velocity_magnitude}
-\includegraphics[width=4.0cm]{Images/Initial_pressure}
 \end{center}
-\caption{\label{fig:initial_setup} Slices showing the number density, temperature, velocity magnitude
-and pressure for the initial conditions used in this paper. }
+\caption{\label{fig:initial_setup} Slices showing the number density and temperature 
+for the initial conditions used in this paper. }
 \end{figure}
 
 %% ----------------------------------------------------------------
@@ -183,62 +181,45 @@ We now carry out a set of simulations exploring the evolution of this cloud unde
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=8.5cm]{Images/density_series-eps-converted-to}
-\includegraphics[width=8.5cm]{Images/temperature_series}
+\includegraphics[width=8.5cm]{Images/profile_panel}
 \end{center}
-\caption{\label{fig:profile_turbulence} Cell {\bf (volume or mass?)} weighted profiles for 
-the density (top panel) and temperature (bottom panel) as a function of radius at various 
-output times, as shown, for runs with cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$.}
+\caption{\label{fig:profiles} Cell mass weighted profiles for 
+density (top panel) and temperature (bottom panel) as a function of radius at various 
+output times, as shown, for runs with cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$
+(left column) and $Z=10^{-3}Z_\odot$ (right column).}
 \end{figure}
 
 We start with a low metallicity gas -- adopting $Z=10^{-3}Z_\odot$ puts us well into the regime
 where the gas cooling time is longer than the gravitational collapse time (see the previous section).
-In the top panel of Figure~\ref{fig:profile_turbulence}, we show density profiles at a range of times during
-the collapse.  The cloud, which is initially stable, starts to evolve due both to the added
+In the top left panel of Figure~\ref{fig:profiles}, we show density profiles at a range of times during
+the collapse. The cloud, which is initially stable, starts to evolve due both to the added
 turbulence and to gravity+cooling. The free fall time of the cloud is $t_{ff}\approx 6$
-Myr.  However, the slow cooling time delays the immediate large scale collapse.
+Myr. However, the slow cooling time delays the immediate large scale collapse.
 This can be see by the flat density profiles at times earlier than 15 Myr. 
 In fact, the cloud initially starts to drive mass outward, due to the increase in pressure 
 from the added turbulence. The outer rim
 of the cloud begins to move outward, initially decreasing the amount of mass in each radii.
 The expansion only lasts for $\approx 10$ Myr. At that point, gravitational
-collapse sets in and the formation of a core begins, see Figure~\ref{fig:slice_turbulence}. The bottom
-hand panel of Figure~\ref{fig:profile_turbulence}, demonstrates the inability of the cloud to cool
+collapse sets in and the formation of a core begins, see Figure~\ref{fig:number_density_panel}. The bottom
+left hand panel of Figure~\ref{fig:profiles}, demonstrates the inability of the cloud to cool
 sufficiently. As expected from the one zone model, the cloud cannot efficiently
 cool before global gravitational collapse sets in.
 
 \begin{figure}
 \begin{center}
-\mbox{\includegraphics[width=8.5cm]{Images/density_slice}}
+\mbox{\includegraphics[width=9.0cm]{Images/slice_number_density_panel}}
 \end{center}
-\caption{\label{fig:slice_turbulence} Density slice at $t=19.4$ Myr for run with
-cooling, turbulence, and metallicity of $Z=10^{-3}Z_\odot$. In this run cooling is
-not efficient and gravity takes over forming a dense core. }
-\end{figure}
-\begin{figure}
-\begin{center}
-\mbox{\includegraphics[width=8.5cm]{Images/temperature_series_0_01}}
-\end{center}
-\caption{\label{fig:temperature_series} Cell weighted temperature profiles
-at given output times for run with cooling, turbulence, and
-metallicity of $Z=10^{-2}Z_\odot$.}
+\caption{\label{fig:number_density_panel} Density and temperature slices corresponding
+to Figure~\ref{fig:profiles}.}
 \end{figure}
 
 We repeat the previous run except we change the metallicity to $Z=10^{-2}Z_\odot$. In this case there is a significant difference in the run.
-The gas is now allowed to cool efficiently, as evident in the temperature profiles -- see Figure~\ref{fig:temperature_series}. The center
+The gas is now allowed to cool efficiently, as evident in the temperature profiles -- see Figure~\ref{fig:profiles}. The center
 of the gas cloud, up to radii of $\approx 10$ pc, has cooled to $\approx 200$ K in less than a million years. The added effect of the turbulence
 allows the cold gas to condense into dense pockets. Therefore, reaching higher densities untill local fragmentation sets in.
-In Figure~\ref{fig:density_turbulence_0_01}, it is apparent from the density knots that local fragmentation has set in disallowing the gas
+In Figure~\ref{fig:number_density_panel}, it is apparent from the density knots that local fragmentation has set in disallowing the gas
 to collapse globally at time 2.25 Myr. Hence, our numerical runs agree with our simple one zone models. Moreover, we find that there is a critical metallicity
 between $10^{-3}-10^{-2}Z_\odot$ that seperates the evolution of gas cloud into either global gravitational collapse or local fragmentation. 
-\begin{figure}
-\begin{center}
-\mbox{\includegraphics[width=8.5cm]{Images/density_slice_0_01}}
-\end{center}
-\caption{\label{fig:density_turbulence_0_01}} Density slice at $t=2.25$ Myr for run with
-cooling, turbulence, and metallicity of $Z=10^{-2}Z_\odot$. In this run cooling is
-efficient causing local fragmentation. 
-\end{figure}
 
  
 \subsection{Heating Runs}
