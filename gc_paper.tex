@@ -163,8 +163,8 @@ this initial conditions for essentially all of the runs analyzed in this paper.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=4.0cm]{Images/Initial_number_density}
-\includegraphics[width=4.0cm]{Images/Initial_temperature}
+\includegraphics[width=6cm]{Images/Initial_number_density}
+\includegraphics[width=6cm]{Images/Initial_temperature}
 \end{center}
 \caption{\label{fig:initial_setup} Slices showing the number density and temperature 
 for the initial conditions used in this paper. }
@@ -181,7 +181,7 @@ We now carry out a set of simulations exploring the evolution of this cloud unde
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=8.5cm]{Images/profile_panel}
+\includegraphics[width=9.5cm]{Images/profile_panel}
 \end{center}
 \caption{\label{fig:profiles} Cell mass weighted profiles for 
 density (top panel) and temperature (bottom panel) as a function of radius at various 
@@ -191,35 +191,46 @@ output times, as shown, for runs with cooling, turbulence, and metallicity of $Z
 
 We start with a low metallicity gas -- adopting $Z=10^{-3}Z_\odot$ puts us well into the regime
 where the gas cooling time is longer than the gravitational collapse time (see the previous section).
-In the top left panel of Figure~\ref{fig:profiles}, we show density profiles at a range of times during
-the collapse. The cloud, which is initially stable, starts to evolve due both to the added
-turbulence and to gravity+cooling. The free fall time of the cloud is $t_{ff}\approx 6$
+In the left panels of Figure~\ref{fig:profiles}, we show density and temperature profiles at a range of times during
+the collapse.  The cloud, which is initially stable (i.e. in pressure equilibrium), starts to evolve due both to the added
+turbulence, and to gravity plus cooling. The free fall time of the cloud is $t_{ff}\approx 3$
 Myr. However, the slow cooling time delays the immediate large scale collapse.
-This can be see by the flat density profiles at times earlier than 15 Myr. 
-In fact, the cloud initially starts to drive mass outward, due to the increase in pressure 
-from the added turbulence. The outer rim
-of the cloud begins to move outward, initially decreasing the amount of mass in each radii.
-The expansion only lasts for $\approx 10$ Myr. At that point, gravitational
-collapse sets in and the formation of a core begins, see Figure~\ref{fig:number_density_panel}. The bottom
-left hand panel of Figure~\ref{fig:profiles}, demonstrates the inability of the cloud to cool
-sufficiently. As expected from the one zone model, the cloud cannot efficiently
+This can be seen by the flat density profiles at times earlier than about 15 Myr. 
+In fact, the cloud initially expands due to the added turbulence. The outer rim
+of the cloud moves outward, initially decreasing the density in the center.
+The expansion lasts for $\approx 10$ Myr and during this time, the temperature drops moderately
+(by about a factor of 2), mostly due to the expansion.  By 18 Myr, the gravitational
+collapse sets in and a dense central core forms.   The bottom left hand panel of Figure~\ref{fig:profiles}
+shows the temperature profiles, with the temperature rising mildly during the recollapse, but
+not rising about about 1000 K due to radiative cooling.
+
+More detail of this collapse can be seen in the left set of panels of Figure~\ref{fig:number_density_panel},
+which shows a slice of the density through the center of the collapse, at the same times as shown
+by the profiles in Figure~\ref{fig:profiles} (6, 12 and 18 Myr after the initial time).  Clearly the the turbulence drives
+substantial fluctuations in the density (and temperature), but the cloud does not fragment, undergoing
+global collapse.   As expected from the one zone model, the cloud cannot efficiently
 cool before global gravitational collapse sets in.
 
 \begin{figure}
 \begin{center}
-\mbox{\includegraphics[width=9.0cm]{Images/slice_number_density_panel}}
+\mbox{\includegraphics[width=10.5cm]{Images/slice_number_density_panel}}
 \end{center}
 \caption{\label{fig:number_density_panel} Density and temperature slices corresponding
 to Figure~\ref{fig:profiles}.}
 \end{figure}
 
-We repeat the previous run except we change the metallicity to $Z=10^{-2}Z_\odot$. In this case there is a significant difference in the run.
-The gas is now allowed to cool efficiently, as evident in the temperature profiles -- see Figure~\ref{fig:profiles}. The center
+We repeat the previous run except we change the metallicity to $Z=10^{-2}Z_\odot$.  The profiles are shown
+in the right-hand side of Figure~\ref{fig:profiles} and the density slices on the right-hand side of Figure~\ref{fig:number_density_panel}.  In this case there is a significant difference in the run.
+The gas is now allowed to cool efficiently, as evident particularly in the temperature profiles.   The center
 of the gas cloud, up to radii of $\approx 10$ pc, has cooled to $\approx 200$ K in less than a million years. The added effect of the turbulence
-allows the cold gas to condense into dense pockets. Therefore, reaching higher densities untill local fragmentation sets in.
-In Figure~\ref{fig:number_density_panel}, it is apparent from the density knots that local fragmentation has set in disallowing the gas
-to collapse globally at time 2.25 Myr. Hence, our numerical runs agree with our simple one zone models. Moreover, we find that there is a critical metallicity
-between $10^{-3}-10^{-2}Z_\odot$ that seperates the evolution of gas cloud into either global gravitational collapse or local fragmentation. 
+allows the cold gas to condense into dense pockets.  This is seen clearly in the density slices, which show the formation of many dense, self-gravitating clumps.  
+Therefore, reaching higher densities untill local fragmentation sets in.
+Hence, we see again that our numerical runs agree with our simple one zone models. Moreover, we find that there is a critical metallicity
+between $10^{-3}-10^{-2}Z_\odot$ that separates the evolution of gas cloud into either global gravitational collapse or local fragmentation. 
+
+Note that the times shown in the profiles and slices differ between the two runs because we stop the calculation in both cases when dense gas clouds form and we are no longer able to follow the evolution even with our AMR run.  At this point, star formation would rapidly occur.
+
+
 
  
 \subsection{Heating Runs}
