@@ -29,7 +29,7 @@
 \topmargin -1cm
 
 
-\title{Cooling Clouds by Varying Metallicities: Origin of Globular Cluster Bimodality}
+\title{Slow Cooling in Low Metallicity Clouds: An Origin of Globular Cluster Bimodality?}
 
 \author[R. Fernandez et al.]{Ricardo Fernandez$^{1}$ and Greg L. Bryan$^{1}$\\
 $^{1}$Department of Astronomy, Columbia University, 550 West 120th Street, New York, NY 10027, USA}
@@ -115,9 +115,10 @@ to high density low temperature for values above and low density high temperatur
 the metallicity increase the equilibrium curve shifts downward, decreasing the possibility of having globular cluster
 like conditions.
 
+
 This is all determine by computing cooling and dynamical times for gas with a characteristic density and temperature, demonstrating that the idea of inefficient cooling may be appropriate for low-metallicity gas (or gas with a somewhat higher metallicity but stronger radiative background).   We now turn to space- and time-dependent numerical simulations to explore this idea further.  Ideally, we would carry out cosmological simulations that included the full range of dynamical processes relevant for star formation at high-redshift with low (but non-zero) metallicity.  However, this is computational intractable, and therefore we instead investigate a simple, idealized set up.  We expect that gas cloud collisions during mergers at high-redshift will result in the accumulation of gas in relatively dense knows.  These clouds will rapidly cool to temperatures around $10^4$ K.  Therefore, we set up turbulently perturbed Bonner-Ebbert spheres with masses typical of globular clusters, and densities/metallicities motivated by Figure~\ref{fig:cooling_to_freefall}.   In future work, we will explore more complicated dynamics, such as colliding flows; however, here we explore perhaps the most simple possible test of this idea.
 
-
+% to do: discuss critical density
 
 %% ----------------------------------------------------------------
 %
@@ -228,6 +229,8 @@ not heating above about 1000 K due to radiative cooling.
 
 More detail of this collapse can be seen in Figure~\ref{fig:number_density_panel}, which shows the slices of density (left set of 6 panels) and temperature (right set of 6 panels) for this low metallicity run on the left side of each set of panels.  We select the same times as in Figure~\ref{fig:profiles} (6, 12 and 18 Myr after the initial time).  Clearly the the turbulence drives substantial fluctuations in the density (and temperature), but the cloud does not fragment, undergoing global collapse.   As expected from the one zone model, the cloud cannot efficiently cool before global gravitational collapse sets in.
 
+% ---------
+
 \subsubsection{$Z=10^{-2}Z_\odot$}
 
 We repeat the previous run except we increase the metallicity to $Z=10^{-2}Z_\odot$.  The profiles are shown
@@ -251,7 +254,6 @@ and mild heating (left column) and stronger heating (right column).  See text fo
 \end{figure}
 
 
-% ------
 
 \begin{figure}
 \begin{center}
@@ -264,9 +266,14 @@ stronger heating (right column).
 }
 \end{figure}
 
+% ------
+
 \subsection{Runs with Photo-heating}
 
-We next turn to simulations which include the impact of radiative heating, either from a metagalactic background or from nearby star formation (but assuming there is no direct physical impact on our cloud).  We have carried out two additions simulations to explore this: the first has a radiative background typical of the \citet{Haardt2012} metagalctic background at $z=0$, as modeled with our cooling package {\sc gracle} (and ultimately Cloudy).  This is a relatively mild heating source, but is sufficient to heat the low-temperature gas at low metallicity (see Figure~\ref{fig:cooling_to_freefall_background} for the resulting cooling times).  The second simulation adds an additional specific heating rate of XX erg/s/g, as might arise from a photo-electric heating term arising from a nearby unattenuated UV source. 
+\subsubsection{$Z = 0.01$, varying heating}
+
+We next turn to simulations which include the impact of radiative heating, either from a metagalactic background or from nearby star formation (but assuming there is no direct physical impact on our cloud).  We have carried out two additions simulations to explore this: the first has a radiative background typical of the \citet{Haardt2012} metagalctic background at $z=0$, as modeled with our cooling package {\sc gracle} (and ultimately Cloudy).  This is a relatively mild heating source, but is sufficient to heat the low-temperature gas at low metallicity (see Figure~\ref{fig:cooling_to_freefall_background} for the resulting cooling times).  The second simulation adds an additional specific heating rate of XX erg/s/g, as might arise from a photo-electric heating term arising from a nearby unattenuated UV source.
+
 
 % To do: more on radiation heating rate (J and metallicity) and optical depth [here or in discussion]
 
@@ -291,18 +298,26 @@ The reason for this striking difference is made clear in the pressure-temperatur
 
 In the low heating run, there is some gas in the lower temperature phase, and this gas would like to cool and move up the equilibrium curve to the left, but in order to do so, it must dynamically increase its pressure, which it eventually does through gravitational collapse (the amount of gas in this phase exceeds the Jeans mass, although it takes some time to collect together in the center of the cloud).  In the higher heating simulation, there is essentially no gas in the lower phase, even though the extra heating is so small that it is difficult to see the small upward shift in the equilibrium curves in Figure~\ref{fig:phase_panels}.  This small extra heating boosts the equilibrium pressure of the low-temperature stable phase above the cloud pressure and so it is inaccessible to the gas.  The net result is a completely stable cloud, with no collapse or fragmentation.
 
-Therefore we see that heating modifies the collapse by creating a multi-phase medium, and only the low temperature phase can gravitationally collapse.  This is reminiscent of the situation in the interstellar medium at late times; however, here our cooling rates are much lower over all and so the densities are sufficiently high that the dynamical (gravitational) timescale of the overall ($\sim 10^6 \msun$) cloud becomes important.   
+Therefore we see that heating modifies the collapse by creating a multi-phase medium, and only the low temperature phase can gravitationally collapse.  This is reminiscent of the situation in the interstellar medium at late times; however, here our cooling rates are much lower over all and so the densities are sufficiently high that the dynamical (gravitational) timescale of the overall ($\sim 10^6$ \msun) cloud becomes important.   
 
-In the discussion, we will develop a simple analytic model based on the insights described above and discuss how this model can be applied to physical conditions in order to create a more comprehensive picture for cloud collapse vs. fragmentation as a function of metallicity and radiative heating rate.  However, first, we will explore one final model which features a more extreme case i
+In the discussion, we will develop a simple analytic model based on the insights described above and discuss how this model can be applied to physical conditions in order to create a more comprehensive picture for cloud collapse vs. fragmentation as a function of metallicity and radiative heating rate.  However, first, we will explore one final model which features a more extreme case.
 
-\subsection
+\subsubsection{Higher mass, higher radiative collapse}
+
+
+
+
 
 %% ----------------------------------------------------------------
 % 
 \section{Discussion}
 \label{sec:discussion}
+
+
 \subsection{Analytic Model}
+
 \subsection{Implications}
+
 \subsection{Caveats}
 
 %% ----------------------------------------------------------------
