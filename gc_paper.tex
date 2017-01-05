@@ -349,20 +349,20 @@ where we have allowed a possible overpressure criterion $\chi$.
 
 Equating these two pressures ($P_{\Gamma \rm eq} = P_{cBE}$) gives a critical metallicity:
 \begin{equation}
-Z_{\rm crit} = Z_0 \frac{ k T_0^\alpha G^3}{19.9 \Lambda_0 \chi} \frac{T^{1+\alpha}}{c_s^8} \Gamma M_{\rm BE}^2
+Z_{\rm crit} = Z_0 \frac{ k T_0^\alpha G^3}{19.9 \Lambda_0 \chi} \frac{T^{1-\alpha}}{c_s^8} \Gamma M_{\rm BE}^2
 \label{eq:crit_zl}
 \end{equation}
 and we can immediately read off the scaling with heating rate $\Gamma$ linear, as expected and (Bonner-Ebert) cloud mass.
 
 In addition to the case of thermal equilibrium between radiative heating and cooling, we can explore a model in which the heating is supplied by dissipation of turbulence.  We assume this heating rate is given by $\sigma^3 \rho / L$, where $\sigma$ is the turbulent velocity dispersion and $L$ is the driving scale (here our largest turbulent scale so that $L = 2 \pi / k_{\rm max}$).   Again, balancing this with cooling, we can compute an effective equation of state.\footnote{Note that this is {\it not} the turbulent pressure, but is instead the thermal pressure that arises from turbulent heating.  A more complete description would add a turbulent pressure term here, but for simplicity, here we neglect that term which we expect to be subdominant.}
 \begin{equation}
-P_{\rm Teq} = \frac{\sigma^3 \mu}{L \Lambda_0} \left( \frac{Z}{Z_0} \right)^{-1} \left( \frac{T}{T_0} \right)^{-\alpha}
+P_{\rm Teq} = \frac{\sigma^3 \mu k Z_0 T_0^{\alpha}}{L \Lambda_0 Z} T^{1-\alpha}
 \label{eq:Teq}
 \end{equation}
 
 Following the same logic as before, equilibrium between these pressures can be used to find a critical metallicity:
 \begin{equation}
-Z_{\rm crit} = Z_0 \frac{ \sigma^3 \mu T_0^\alpha G^3}{19.9 L \Lambda_0 \chi T^{\alpha}} M_{\rm BE}^2
+Z_{\rm crit} = Z_0 \frac{ \sigma^3 \mu k T_0^\alpha G^3}{19.9 \Lambda_0 \chi} \frac{T^{1-\alpha}}{L c_s^8} M_{\rm BE}^2
 \label{eq:crit_zt}
 \end{equation}
 
