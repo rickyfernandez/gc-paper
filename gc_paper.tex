@@ -333,12 +333,12 @@ In Section~\ref{sec:basic}, we outlined our basic idea, and in the previous sect
 
 We begin by examining the models with radiative heating, as thermal balance results in a clear density-temperature relation.  We will then try to extend this to the case without (radiative) heating.  Assuming a simple power law cooling rate per particle $\Lambda(T) = \Lambda_0 (Z/Z_0) (T/T_0)^{\alpha}$, thermal equilibrium for can be written as
 \begin{equation}
-\Lambda_0 \frac{Z}{Z_0} \left( \frac{T}{T_0} \right)^{\alpha} = \Gamma n^2
+\Lambda_0 \frac{Z}{Z_0} \left( \frac{T}{T_0} \right)^{\alpha} n^2 = \Gamma n
 \label{eq:thermal_eq}
 \end{equation}
 Conceptually fixing the temperature, this can be solved for density and used the ideal gas equation to determine a pressure set by thermal equilibrium:
 \begin{equation}
-P_{\rm eq} = \frac{k \Lambda_0 Z T_0 T^{\alpha+1}}{\Gamma Z_0}
+P_{\Gamma \rm eq} = \frac{\Gamma k Z_0 T_0^{\alpha}}{\Lambda_0 Z} T^{1-\alpha}
 \label{eq:peq}
 \end{equation}
 The right panel of Figure~\ref{fig:phase_panels} (and associated discussion) shows that, before fragmentation sets in, the pressure (particularly in the central parts, where fragmentation is most likely) is roughly constant.  There are a number of ways to parameterize this central pressure, but here we choose to do so in terms of the critical Bonner-Ebert pressure in the center:
@@ -347,13 +347,24 @@ P_{\rm cBE} = 19.9 \frac{\chi c_s^8}{G^3 M_{\rm BE}^2}
 \end{equation}
 where we have allowed a possible overpressure criterion $\chi$.
 
-Equating these two pressures gives a critical metallicity:
+Equating these two pressures ($P_{\Gamma \rm eq} = P_{cBE}$) gives a critical metallicity:
 \begin{equation}
-Z_{\rm crit} = Z_0 \frac{19.9 c_s^8}{G^3 k \Lambda_0 T_0 T^{1+\alpha}} \frac{\chi \Gamma}{M_{\rm BE}^2}
-\label{eq:crit_metal}
+Z_{\rm crit} = Z_0 \frac{ k T_0^\alpha G^3}{19.9 \Lambda_0 \chi} \frac{T^{1+\alpha}}{c_s^8} \Gamma M_{\rm BE}^2
+\label{eq:crit_zl}
 \end{equation}
 and we can immediately read off the scaling with heating rate $\Gamma$ linear, as expected and (Bonner-Ebert) cloud mass.
 
+In addition to the case of thermal equilibrium between radiative heating and cooling, we can explore a model in which the heating is supplied by dissipation of turbulence.  We assume this heating rate is given by $\sigma^3 \rho / L$, where $\sigma$ is the turbulent velocity dispersion and $L$ is the driving scale (here our largest turbulent scale so that $L = 2 \pi / k_{\rm max}$).   Again, balancing this with cooling, we can compute an effective equation of state.\footnote{Note that this is {\it not} the turbulent pressure, but is instead the thermal pressure that arises from turbulent heating.  A more complete description would add a turbulent pressure term here, but for simplicity, here we neglect that term which we expect to be subdominant.}
+\begin{equation}
+P_{\rm Teq} = \frac{\sigma^3 \mu}{L \Lambda_0} \left( \frac{Z}{Z_0} \right)^{-1} \left( \frac{T}{T_0} \right)^{-\alpha}
+\label{eq:Teq}
+\end{equation}
+
+Following the same logic as before, equilibrium between these pressures can be used to find a critical metallicity:
+\begin{equation}
+Z_{\rm crit} = Z_0 \frac{ \sigma^3 \mu T_0^\alpha G^3}{19.9 L \Lambda_0 \chi T^{\alpha}} M_{\rm BE}^2
+\label{eq:crit_zt}
+\end{equation}
 
 
 \subsection{Implications}
