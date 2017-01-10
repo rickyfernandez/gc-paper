@@ -56,15 +56,15 @@ globular clusters - methods:numerical
 %
 \section{Introduction}
 
-Globular clusters (GCs), with typical masses of $10^5$-$10^6$ \msun\ are particularly interesting relics of star formation for a number of reasons: (1) the are very concentrated, with half-mass radii of a few parsecs, indicating that star formation occurred in a particularly dense environment; (2) the stars in a given GC generally have a very narrow spread in ages and metallicity, implying a single stellar population (although recent results have revealed a more nuanced situation here, as we will discuss briefly later), and (3) the metallicity distribution of GCs in external galaxies is generally bimodal (or at least very different from the metallicity distribution of stars in the galaxy as a whole), with a large number of low-metallicity GCs.  Reviews of their properties include Brodie \& Strader (2006), Renzini (2008, 2013), and see also Protegies et al (2010).
+Globular clusters (GCs), with typical masses of $10^5$-$10^6$ \msun\ are particularly interesting relics of star formation for a number of reasons: (1) the are very concentrated, with half-mass radii of a few parsecs, indicating that star formation occurred in a particularly dense environment; (2) the stars in a given GC generally have a very narrow spread in ages and metallicity, implying a single stellar population (although recent results have revealed a more nuanced situation here, as we will discuss briefly later), and (3) the metallicity distribution of GCs in external galaxies is generally bimodal (or at least very different from the metallicity distribution of stars in the galaxy as a whole), with a large number of low-metallicity GCs.  Reviews of their properties include \citet{Brodie2006}, \citet{Renzini2008, Renzini2013}, and see also \cite{zwart2010}.
 
-This bimodal, or possibly skewed metallicity distribution (e.g. Strader et al. 2003, Peng et. al 2006) is sometimes interpreted as indicating that there are two formation modes: one that produced low-metallicity, old systems and a second for the generally younger, higher-metallicity component.  For instance, Ashman \& Zepf (1992) suggested that metal-rich GCs are formed in gas rich mergers and metal-poor GCs are donated by progenitor spirals.  However, their work did not incorporate a cosmological model, and their predictions of the number and color distribution of GCs in massive Es galaxies were not consistent, as pointed out by Forbes, Brodie \& Grillmair (1997).  Other models explored reionization for setting the bimodality (e.g., Santos 2003; Harris \& Pudritz 1994).
+This bimodal, or possibly skewed metallicity distribution \citep[e.g.,][]{Strader2003, Peng2006} is sometimes interpreted as indicating that there are two formation modes: one that produced low-metallicity, old systems and a second for the generally younger, higher-metallicity component.  For instance, \citet{Ashman1992} suggested that metal-rich GCs are formed in gas rich mergers and metal-poor GCs are donated by progenitor spirals.  However, their work did not incorporate a cosmological model, and their predictions of the number and color distribution of GCs in massive Es galaxies were not consistent, as pointed out by \citet{Forbes1997}.  Other models explored reionization for setting the bimodality \citep[e.g.,][]{Santos2003, Harris1994}.
 
-Beasley et al. (2002) augmented this picture by incorporating a semi-analytical model of combined galaxy and GC formation in a cosmological context. In that work, each mode of GC formation was assigned a fixed efficiency relative to the field stars. However, to match observed values, the formation of metal-poor GCs had to be artificially truncated after $z = 5$. Recently, investigations have explored more empirical, hierarchical galaxy formation models in a cosmological setting.   Muratov \& Gnedin (2010) have modeled the formation of GCs using the assembly history from cosmological simulations combined with observed scaling relations. In their model bimodality naturally arises from the rate of galaxy mergers. Early mergers preferentially produce metal-poor GCs and a few late massive mergers can produce a significant number of metal-rich GCs.  However their model produces metal-rich GCs that are too young, which is at odds with observation that some of metal-rich GCs are old as metal-poor GCs. In addition, their model is again semi-analytic and doesn't explicit deal with how star formation proceeds in low-metallicity, high-density gas.
+Beasley et al. (2002) augmented this picture by incorporating a semi-analytical model of combined galaxy and GC formation in a cosmological context. In that work, each mode of GC formation was assigned a fixed efficiency relative to the field stars. However, to match observed values, the formation of metal-poor GCs had to be artificially truncated after $z = 5$. Recently, investigations have explored more empirical, hierarchical galaxy formation models in a cosmological setting.   \citet{Muratov2010} have modeled the formation of GCs using the assembly history from cosmological simulations combined with observed scaling relations. In their model bimodality naturally arises from the rate of galaxy mergers. Early mergers preferentially produce metal-poor GCs and a few late massive mergers can produce a significant number of metal-rich GCs.  However their model produces metal-rich GCs that are too young, which is at odds with observation that some of metal-rich GCs are old as metal-poor GCs. In addition, their model is again semi-analytic and doesn't explicit deal with how star formation proceeds in low-metallicity, high-density gas.
 
 Essentially none of the models discussed above attempt to model the detailed structure of star formation within globular clusters.  In particular, it is not clear how to get a large amount of gas ($10^6$ \msun) into a very small region without star formation occurring during the collapse, which would result in a wide spatial distribution of stars and perhaps even prevent the collapse.  
 
-As an aside, we note that, quite recently, observations have demonstrated that globular clusters are not a single stellar population, but may be composed of multiple generations showing enhanced He and specific abundance changes, particularly those associated with proton-capture processes (e.g., Norris et al 1981; Kraft 1994; Gratton et al. 2001; Carretta et al. 2009).  In addition, photometric data shows a splitting of the man sequence in many GCs (e.g., Piotto 2009; Anderson et al. 2009; Milone et al. 2010).  This has been challenging to explain because, with a few possible exceptions, the Fe abundence distribution is generally very narrow (consistent with observational errors), indicating that supernova self-enrichment plays no role.  A wide range of models have been proposed to explain these abundance irregularities, beginning with the possibility that AGB stars in the 4-8 \msun\ mass range can produce the necessary elements through hot bottom burning (e.g., D'Ercole et al 2010; Ventura et al. 2013).  Other ideas include the existence of Fast Rotating Massive Stars (FRMS; Krause et. al 2013), supermassive stars (Denissenkov \& Hartwick 2014; Denissenkov et. al 2015), and massive interacting binaries (e.g. Mink 2009; Bastian et al. 2013).  All of these solutions are problematic for a number of reasons (e.g. Renzini et al. 2015; Bastian et al. 2015), including the mass budget required to generate the observed number of second generation stars.  However, in this work, we will not explicitly explore this second generation, instead focusing on the problem of understanding star formation in low-metallicity gas.
+As an aside, we note that, quite recently, observations have demonstrated that globular clusters are not a single stellar population, but may be composed of multiple generations showing enhanced He and specific abundance changes, particularly those associated with proton-capture processes \citep[e.g.,][]{Norris1981, Kraft1994, Gratton2001, Carretta2009}.  In addition, photometric data shows a splitting of the man sequence in many GCs \citet[e.g.,][]{Piotto2009, Anderson2009, Milone2010}.  This has been challenging to explain because, with a few possible exceptions, the Fe abundence distribution is generally very narrow (consistent with observational errors), indicating that supernova self-enrichment plays no role.  A wide range of models have been proposed to explain these abundance irregularities, beginning with the possibility that AGB stars in the 4-8 \msun\ mass range can produce the necessary elements through hot bottom burning \citep[e.g.,][]{DErcole2010, Ventura2013}.  Other ideas include the existence of Fast Rotating Massive Stars \citep[FRMS][]{Krause2013}, supermassive stars \citep{Denissenkov2014,  Denissenkov2015}, and massive interacting binaries \citet[e.g.,][]{deMink2009, Bastian2013}.  All of these solutions are problematic for a number of reasons \citep[e.g.,][]{Renzini2015, Bastian2015}, including the mass budget required to generate the observed number of second generation stars.  However, in this work, we will not explicitly explore this second generation, instead focusing on the problem of understanding star formation in low-metallicity gas.
 
 
 %% ----------------------------------------------------------------
@@ -79,7 +79,7 @@ this scenario, the parameter space consists of density, temperature, and metalli
 are chosen the evolutionary timescales are computed: the quantity of interest is the ratio of the absolute value of cooling
 time to dynamical time $|t_{cool}|/t_{dyn}$. In our simple one zone model, cooling is computed using the
 publicily available \textsc{grackle} chemistry library; details of implementation and functionality can be found
-in \cite{Bryan2013}.
+in \cite{Bryan2014}.
 \begin{figure}
 \begin{center}
 \mbox{\includegraphics[width=8.5cm]{Images/cooling_to_freefall_no_background}}
@@ -127,7 +127,7 @@ This is all determine by computing cooling and dynamical times for gas with a ch
 \subsection{Numerical Method}
 
 The simulations in this paper were performed with the publicly available Eulerian three-dimensional
-hydrodynamical adaptive mesh refinement Enzo code \citep{Bryan2013}. The domain
+hydrodynamical adaptive mesh refinement Enzo code \citep{Bryan2014}. The domain
 box size of the simulation was 150 pc on a side with a top level root grid resolution of $128^3$, and
 a maximum refinement level of 3, for a cell size of 0.125 pc.  Cell refinement was dictated 
 by the gas mass such that a cell was refined whenever the its mass became larger than 0.1 M$_\odot$.
@@ -135,9 +135,9 @@ In addition, we refined based on the Jeans length such that it was
 always refined by at least 4 cells.
 
 Our simulations included self gravity and radiative cooling using the
-Grackle library; details described in \cite{Bryan2013}. The metal cooling (and
+Grackle library; details described in \cite{Bryan2014}. The metal cooling (and
 heating) rates are computed using a non-equilibrium model for H, H$^+$, He, He$^+$, He$^++$ and e$^-$
-and a table computed from Cloudy for metal-line cooling (and heating), as described in Smith et al. (????).
+and a table computed from Cloudy for metal-line cooling (and heating), as described in \citet{Smith2016}.
 When a radiative background is included, we use \cite{Haardt2012} at $z=$0
 
 \begin{figure}
@@ -331,30 +331,34 @@ Our numerical simulations paint a consistent picture: below a critical (low) met
 
 In Section~\ref{sec:basic}, we outlined our basic idea, and in the previous section, demonstrated that, in principle, the effect can be important for specific parameter choices.  Here, we try to create a {\it very} simple model of the key processes and to see how the critical cooling rate (or metallicity) scales with heating rate and cloud mass.
 
-We begin by examining the models with radiative heating, as thermal balance results in a clear density-temperature relation.  We will then try to extend this to the case without (radiative) heating.  Assuming a simple power law cooling rate per particle $\Lambda(T) = \Lambda_0 (Z/Z_0) (T/T_0)^{\alpha}$, thermal equilibrium for can be written as
+We begin by examining the models with radiative heating, as thermal balance results in a clear density-temperature relation.  We will then extend this to the case without (radiative) heating.  Assuming a simple power law cooling rate per particle $\Lambda(T) = \Lambda_0 (Z/Z_0) (T/T_0)^{\alpha}$, (which is a reasonably accurate below $10^4$ K, for which $\alpha \approx 1$), thermal equilibrium can be written as,
 \begin{equation}
 \Lambda_0 \frac{Z}{Z_0} \left( \frac{T}{T_0} \right)^{\alpha} n^2 = \Gamma n
 \label{eq:thermal_eq}
 \end{equation}
-Conceptually fixing the temperature, this can be solved for density and used the ideal gas equation to determine a pressure set by thermal equilibrium:
+where $\Gamma$ is the heating rate per particle.  Conceptually fixing the temperature, this can be solved for density and used in the ideal gas equation to determine a pressure set by thermal equilibrium:
 \begin{equation}
 P_{\Gamma \rm eq} = \frac{\Gamma k Z_0 T_0^{\alpha}}{\Lambda_0 Z} T^{1-\alpha}
 \label{eq:peq}
 \end{equation}
-The right panel of Figure~\ref{fig:phase_panels} (and associated discussion) shows that, before fragmentation sets in, the pressure (particularly in the central parts, where fragmentation is most likely) is roughly constant.  There are a number of ways to parameterize this central pressure, but here we choose to do so in terms of the critical Bonner-Ebert pressure in the center:
+The right panel of Figure~\ref{fig:phase_panels} (and associated discussion) shows that, before fragmentation sets in, the pressure is roughly constant, consistent with the above expression for $\alpha \approx 1$.  This fails at both low and high temperatures, but is a good approximation for a wide range of temperatures (indeed the dotted line in these figures shows a better estimate of the equilibrium pressure).
+
+The other constraint is global hydrostatic equilibrium, which is set by initial Bonner-Ebert critical initial conditions.  There are a number of ways to parameterize this central pressure, but here we choose to do so in terms of the critical Bonner-Ebert pressure in the center:
 \begin{equation}
 P_{\rm cBE} = 19.9 \frac{\chi c_s^8}{G^3 M_{\rm BE}^2}
 \end{equation}
-where we have allowed a possible overpressure criterion $\chi$.
+where we have allowed a possible overpressure value $\chi$ (note that $\chi = 1$ for all but the final run).  In principle, we could rewrite $c_s$ in terms of the temperature; however, we choose not to do so in order to remind ourselves that this is a global relation (note that we could also replace $P_{\rm cBE}$ with $\approx 10 P_{\rm ext}$, where $P_{\rm ext}$ is the external pressure).
 
-Equating these two pressures ($P_{\Gamma \rm eq} = P_{cBE}$) gives a critical metallicity:
+The interpretation of these two pressures can be seen conceptually with reference to the right panels of Figure~\ref{fig:phase_panels}.  For example, as the heating rate increases (or metallicity decreases), Eq.~(\ref{eq:peq}) indicates that the equilibrium pressure will increase, while the BE pressure is unchanged (this is equivalent to going from the left to right column).  At a sufficiently high heating rate (the right column), or sufficiently low metallicity, the two curves cross only at high temperature, while the Jeans length is large and fragmentation is not allowed.  For lower heating rate (left column) or sufficiently high metallicity, the thermal pressure allows a low-temperature solution and therefore a low Jeans length and so more rapid fragmentation.  This argument is very similar to the classic multi-phase ISM, but with the additional scale imposed by the BE sphere and the Jeans length.
+
+The above argument indicates that there is a critical point when these two pressure coincide.  Equating our expressions these two pressures ($P_{\Gamma \rm eq} = P_{cBE}$) gives a critical metallicity:
 \begin{equation}
 Z_{\rm crit} = Z_0 \frac{ k T_0^\alpha G^3}{19.9 \Lambda_0 \chi} \frac{T^{1-\alpha}}{c_s^8} \Gamma M_{\rm BE}^2
 \label{eq:crit_zl}
 \end{equation}
 and we can immediately read off the scaling with heating rate $\Gamma$ linear, as expected and (Bonner-Ebert) cloud mass.
 
-In addition to the case of thermal equilibrium between radiative heating and cooling, we can explore a model in which the heating is supplied by dissipation of turbulence.  We assume this heating rate is given by $\sigma^3 \rho / L$, where $\sigma$ is the turbulent velocity dispersion and $L$ is the driving scale (here our largest turbulent scale so that $L = 2 \pi / k_{\rm max}$).   Again, balancing this with cooling, we can compute an effective equation of state.\footnote{Note that this is {\it not} the turbulent pressure, but is instead the thermal pressure that arises from turbulent heating.  A more complete description would add a turbulent pressure term here, but for simplicity, here we neglect that term which we expect to be subdominant.}
+In addition to the case of thermal equilibrium between radiative heating and cooling, we can explore a model in which the heating is supplied by dissipation of turbulence.  We assume this heating rate is given by $\sigma^3 \rho / L$, where $\sigma$ is the turbulent velocity dispersion and $L$ is the driving scale (here our largest turbulent scale so that $L = 2 \pi / k_{\rm max}$).  Note that this depends on the velocity dispersion, which decreases as the turbulence damps; however, we can set a balance at a given time.   As before, we balance this heating with cooling, and can compute an effective equation of state.\footnote{Note that this is {\it not} the turbulent pressure, but is instead the thermal pressure that arises from turbulent heating.  A more complete description would add a turbulent pressure term here, but for simplicity, here we neglect that term which we expect to be subdominant.}
 \begin{equation}
 P_{\rm Teq} = \frac{\sigma^3 \mu k Z_0 T_0^{\alpha}}{L \Lambda_0 Z} T^{1-\alpha}
 \label{eq:Teq}
@@ -367,9 +371,35 @@ Z_{\rm crit} = Z_0 \frac{ \sigma^3 \mu k T_0^\alpha G^3}{19.9 \Lambda_0 \chi} \f
 \end{equation}
 
 
+\begin{figure}
+\begin{center}
+\includegraphics[width=8.5cm]{heating_cooling/Zcrit.png}
+\end{center}
+\caption{\label{fig:zcrit} The critical metallicity as a function of radiative heating, indicating the dividing line between small-scale instabiity (above the line) and small-scale stability (below the line).  The solid line shows the relation assuming heating is radiative, while the dotted line shows the relation for turbulent heating.  See text for assumed values.  }
+\end{figure}
+
+In Figure~\ref{fig:zcrit}, we show these critical metallicity expressions.  The solid line shows equation~\ref{eq:crit_zl}; above this line the cooling is sufficiently rapid that the thermal pressure allows fragmentation before global collapse, while below the line radiative heating prevents fragmentation.  A similar argument holds for the turbulent-heated critical metallicity, although in this case the relation is $\sigma$ (and hence time) dependent.
+
+Note also the dependence on the BE mass (and sound speed) ...
+
 \subsection{Implications}
 
+As we have argued, the cooling efficiency may play an important role in the fragmentation of low-metallicity clouds.  Paradoxically, low metallicity (or high radiative heating) may allow the gas in near primordial clouds to cool slowly enough that global gravitational collapse precedes local gravitational collapse (at least for a time).  Our detailed simulations show that, in the absence of radiative heating, that critical metallicity is between 0.1\% and 1\% of solar metallicity.  This is well below typical ``blue" globular cluster metallicities, which are typically around a few percent.  However, we have also shown that radiative heating can boost that critical metallicity to values similar to those observed.  
+
+Of course, our calculations are merely suggestive at this point, with many oversimplifications, as we will discuss in more detail in the next section.  However, if we take this seriously, then it does provide an interesting ``direct" explanation for the observed GC bi-modality.  On the other hand, it begs the question about what creates higher-metallicity systems.  In these cases, observations strongly suggest that rapid gas flows are required -- for example the kind of colliding flows that we expect in galaxy mergers.  In that case, the high velocities from the initial conditions (and presumably rapid cooling) permit gas to accumulate to high densities in a short period, circumventing the problem of small-scale fragmentation.  In essence, rather than allowing the $\sim 10^6$ \msun cloud to collapse under its own gravity, the collapse time is boosted by the velocities of the larger (galaxy-massed) halo.  
+
+Therefore, a possible picture emerges of two modes of GC formation: one is a slow, low-metallicity mode in which the collapse timescale is the free-fall time of the proto-GC cloud; while the other is $\sim R/v_{\rm vir}$, where $v_{\rm vir} \sim 200$ km/s is the virial velocity of the parent halo.
+
+
+
+
 \subsection{Caveats}
+
+Here, we briefly remind readers of the many simplifications.  As we have argued throughout, these calculations are intended to more suggestive explorations than realistic predictions.  
+
+First, the initial conditions are quite simplistic, with a Bonner-Ebert sphere and some imposed turbulence.  We do not expect the results to strongly depend on the details of the turbulence; however we have not really discussed how such initial conditions might arise.  One possibility is that colliding flows in low $v_{\rm vir}$ halos shock heat and cool down to $10^4$ K (but not below), settling into the equilibrium configuration envisioned.  More realistic (future) work would explore colliding flows or colliding clouds to better understand the transition between the fast and slow modes discussed above.
+
+More seriously, our radiative and chemical model is somewhat simplistic (although the {\sc Grackle}-based cooling we adopt is based on Cloudy and so, radiative processes aside, quite accurate).
 
 %% ----------------------------------------------------------------
 % 
