@@ -31,8 +31,9 @@
 
 \title{Slow Cooling in Low Metallicity Clouds: An Origin of Globular Cluster Bimodality?}
 
-\author[R. Fernandez et al.]{Ricardo Fernandez$^{1}$ and Greg L. Bryan$^{1}$\\
-$^{1}$Department of Astronomy, Columbia University, 550 West 120th Street, New York, NY 10027, USA}
+\author[R. Fernandez et al.]{Ricardo Fernandez$^{1}$ and Greg L. Bryan$^{1,2}$\\
+$^{1}$Department of Astronomy, Columbia University, 550 West 120th Street, New York, NY 10027, USA \\
+${2}$Center for Computational Astrophysics, Flatiron Institute, 162 Fifth Avenue, New York, NY 10010}
 
 \begin{document}
 
@@ -45,10 +46,10 @@ $^{1}$Department of Astronomy, Columbia University, 550 West 120th Street, New Y
 %\label{firstpage}
 
 \begin{abstract}
-Globular Clusters
-\end{abstract}
 
-We explore the relative role of small-scale fragmentation and global collapse in low-metallicity clouds, pointing out that in such clouds the cooling time may be longer than free-free time, allowing the cloud to collapse before it can fragment.  This, we argue, is a pre-requisite to globular cluster formation, otherwise feedback from early star formation during the early part of the cloud collapse 
+We explore the relative role of small-scale fragmentation and global collapse in low-metallicity clouds, pointing out that in such clouds the cooling time may be longer than free-free time, allowing the cloud to collapse before it can fragment.  This, we argue, may help explain the formation of the low-metallicity component of globular clusters, since such dense stellar systems need a large amount of gas to be collected in a small region (without any star formation during the collapse).  We carry out numerical simulation of low-metallicity Bonner-Ebert stable gas clouds, demonstrating that there exists a critical metallicity (between 0.001 and 0.01 $Z_\odot$) below which the cloud collapses globally without fragmentation.  We also run simulations including a background radiative heating source, showing that this can also produce clouds that do not fragment, provided the metallicity is again below a critical value (which depends on the heating rate and is generally larger than the no-heating case).
+
+\end{abstract}
 
 \begin{keywords}
 globular clusters - methods:numerical
@@ -76,11 +77,7 @@ As an aside, we note that, quite recently, observations have demonstrated that g
 
 In this paper, we explore a simple idea: can the cooling properties of low-metallicity gas clouds themselves influence how star formation proceeds?  High-metallicity (by which we mean approximately solar metallicity, or even lower -- we will address this point more precisely below) gas cools rapidly, typically on a timescale shorter than the dynamical time, meaning that present day large gas clouds, with masses in the GC range, are typically ``cold", with temperatures well below their virial temperatures and so rapid fragmentation is inevitable.  This generally means that high-metallicity giant molecular clouds will rapidly produce stars before they are completely collapsed and feedback from those stars will result in a low star formation efficiency (REF).  However, for a low enough metallicity, the gas may cool slowly so that the cloud will collapse coherently, not fragmenting until the central gas density is very high.  These high densities promote rapid star formation resulting in high efficiency.  In this way, paradoxically, inefficient cooling may result in more efficiency star formation.  {\bf Hoyle REF}
 
-To futher investigate this simple idea we have created one zone models of a cooling parcel of gas. In 
-this scenario, the parameter space consists of density, temperature, and metallicity. Once the parameters
-are chosen the evolutionary timescales are computed: the quantity of interest is the ratio of the absolute value of cooling
-time to dynamical time $|t_{cool}|/t_{dyn}$. In our simple one zone model, cooling is computed using the
-publicily available \textsc{grackle} chemistry library; details of implementation and functionality can be found
+To further investigate this simple idea we have created one zone models of a cooling parcel of gas. In  this scenario, the parameter space consists of density, temperature, and metallicity. Once the parameters are chosen the evolutionary timescales are computed: the quantity of interest is the ratio of the absolute value of cooling time to dynamical time $|t_{cool}|/t_{dyn}$. In our simple one zone model, cooling is computed using the publicily available \textsc{grackle} chemistry library; details of implementation and functionality can be found
 in \cite{Bryan2014}.
 \begin{figure}
 \begin{center}
@@ -89,15 +86,7 @@ in \cite{Bryan2014}.
 \caption{\label{fig:cooling_to_freefall} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.}
 \end{figure}
 
-Figure~\ref{fig:cooling_to_freefall} is a panel showing the ratio of log$(|t_{cool}|/t_{dyn})$
-for metallicity values $Z/Z_{\odot}=10^{-3},10^{-2},10^{-1},1$.  To begin, we focus on the lowest metallicity 
-(upper-left) panel of Fig~\ref{fig:cooling_to_freefall} -- we see that there
-are two regions where cooling and dynamical time are comparable (shaded red). The first is in the temperature range $10^1-10^4$K (the sharp cutoff at $10^4$K is due to efficient cooling from HI line emission), and the second is in the bottom right
-corner. It is the former region in which we are most interested because this area is where we expect to find gas clouds with
-values conducive for globular cluster formation. Over each heat map, we plot lines of density and temperature corresponding to constant Bonner-Ebert mass (see Section~\ref{sec:numerical} for details on how this is computed). It is clear from the plot that,
-for gas clouds with masses typical of globular clusters, there are 
-values in the region where cooling is relatively inefficient, allowing the gas to collapse coherently before it can cool and fragment. Further, as the metallicity
-increases this region becomes less pronounced and the gas becomes more efficient in cooling, which will allow the gas to cool and fragment before global collapse sets in.
+Figure~\ref{fig:cooling_to_freefall} is a panel showing the ratio of log$(|t_{cool}|/t_{dyn})$ for metallicity values $Z/Z_{\odot}=10^{-3},10^{-2},10^{-1},1$.  To begin, we focus on the lowest metallicity  (upper-left) panel of Fig~\ref{fig:cooling_to_freefall} -- we see that there are two regions where cooling and dynamical time are comparable (shaded red). The first is in the temperature range $10^1-10^4$K (the sharp cutoff at $10^4$K is due to efficient cooling from HI line emission), and the second is in the bottom right corner. It is the former region in which we are most interested because this area is where we expect to find gas clouds with values conducive for globular cluster formation. Over each heat map, we plot lines of density and temperature corresponding to constant Bonner-Ebert mass (see Section~\ref{sec:numerical} for details on how this is computed). It is clear from the plot that, for gas clouds with masses typical of globular clusters, there are values in the region where cooling is relatively inefficient, allowing the gas to collapse coherently before it can cool and fragment. Further, as the metallicity increases this region becomes less pronounced and the gas becomes more efficient in cooling, which will allow the gas to cool and fragment before global collapse sets in.
 
 \begin{figure}
 \begin{center}
@@ -131,10 +120,10 @@ This is all determine by computing cooling and dynamical times for gas with a ch
 The simulations in this paper were performed with the publicly available Eulerian three-dimensional
 hydrodynamical adaptive mesh refinement Enzo code \citep{Bryan2014}. The domain
 box size of the simulation was 150 pc on a side with a top level root grid resolution of $128^3$, and
-a maximum refinement level of 3, for a cell size of 0.125 pc.  Cell refinement was dictated 
+a maximum refinement level of 3, for a minimum cell size of 0.125 pc.  Cell refinement was dictated 
 by the gas mass such that a cell was refined whenever the its mass became larger than 0.1 M$_\odot$.
-In addition, we refined based on the Jeans length such that it was
-always refined by at least 4 cells.
+In addition, we refined based on the Jeans length such that it was always refined by at least 4 cells (up until
+the maximum refinement is reached).
 
 Our simulations included self gravity and radiative cooling using the
 Grackle library; details described in \cite{Bryan2014}. The metal cooling (and
@@ -163,7 +152,9 @@ assumptions outlined in Section~\ref{sec:basic}, we chose
 $M_{BE}=10^6$ \msun, $T_{BE}=6000$ K, and $P_{ext}=1.8\times10^5\times k_B$, 
 where $k_B$ is the Boltzmann constant. This corresponds to a cloud on the point of
 gravitational collapse within nearly comparable cooling and collapse times,
-depending the chosen metallicity (which we will vary).
+depending on the chosen metallicity (which we will vary).
+
+Such a cloud may naturally arise during the early formation history ($z \sim 5 to 10$) of typical galactic halos [REF].  The virial temperatures of such progenitor halos are typically around $t_{\rm vir} \sim 10^{4-5}$ K, and the required densities of our cloud correspond to roughly an overdensity of $10^4$ relative to the mean at that epoch.  Therefore our required densities are modestly above typical halo properties and require only a modest amount of cooling.  We note in addition that it is natural for the gas temperature to stall at temperatures just below $10^4$ K for such low metallicity gas, as the above figures make clear.  Finally, we do not discuss the fate of any dark matter in this scenario, but note that our clouds are most likely to form during the merger phase of such halos, when dynamics can lead to compression and so the clouds may well form away from the central dark matter peak.
 
 In addition, we add turbulence to the cloud following a power spectrum of
 $v_k^2 \propto k^{-4}$ for the velocity field.  We include only mode between
@@ -392,9 +383,6 @@ Of course, our calculations are merely suggestive at this point, with many overs
 
 Therefore, a possible picture emerges of two modes of GC formation: one is a slow, low-metallicity mode in which the collapse timescale is the free-fall time of the proto-GC cloud; while the other is $\sim R/v_{\rm vir}$, where $v_{\rm vir} \sim 200$ km/s is the virial velocity of the parent halo.
 
-
-
-
 \subsection{Caveats}
 
 Here, we briefly remind readers of the many simplifications.  As we have argued throughout, these calculations are intended to more suggestive explorations than realistic predictions.  
@@ -409,9 +397,26 @@ There are also a range of other physical processes that we do not include which 
 % 
 \section{Summary}
 
+We have carried out simulations of low metallicity (but not primordial) gas clouds in order to better understand  how such collapse proceeds.  This is motivated in part by a suggestion that the low-metallicity (blue) population of globular clusters form preferentially from such low metallicity gas due to the possibility that the free-fall time is shorter than the cooling time in these clouds.  In particular, we carried out a set of simulation of Bonner-Ebert stable clouds with densities of 10-100 cm$^{-3}$, radii of about 50 pc, and temperatures just below $10^4$ K, with the following results.
+
+\begin{enumerate}
+
+\item In the absence of radiative heating, there is a critical metallicity between $Z=0.001$ Z$_\odot$ and $Z=0.01$ Z$_\odot$, below which the cloud first collapses globally before fragmenting.  For metallicities larger than this critical value, the opposite occurs, and the cloud first fragments.  This is shown most clearly in Figure~\ref{fig:number_density_panel}.  The low metallicity runs result is a fragmenting cloud with properties (size and mass) reminiscent of present-day globular clusters; however, we note that this critical metallicity is lower than the typical values seen even in low-metallicity globular clusters.
+
+\item Adding a radiative heating source (perhaps due to photo-electric heating although we have not included radiative transfer) changes the evolution.  If establishes an equilibrium density-temperature curve and the gas ends up close to this curve in the simulations.  Because of the temperature dependence of the radiative cooling at low temperatures, this gas is nearly at a constant pressure.  We find that, if this thermal-equilibrium set pressure is lower than the hydrostatic pressure of the cloud, rapid fragmentation can occur; while if it is higher, then the cloud is largely stable.  If the stable branch can then gradually collapse (either because the radiative heating rate declines or the cloud is driven globally gravitationally unstable due to cloud-cloud collisions or ongoing accretion), then high-density GC-like formation can occur.
+
+\item For the radiative-heating case, we developed a simple analytical model based on the relative magnitude of the two pressures described above (the thermal-equilibrium pressure and the hydrostatic pressure), with the outcome either fragmentation or (local) stability.  This lead again to the identification of a critical metallicity, but now one that depends on the radiative heating rate.  This is shown in Figure~\ref{fig:zcrit}.
+
+\end{enumerate}
+
+Future steps would be to (i) improve the microphysical model with a more realistic heating and cooling model; (ii) better link the initial conditions to cosmological conditions in the high-redshift forming halos that host these gas clouds; and (iii) model the fragmentation to predict the initial mass function of such clouds, rather than a simple fragmention or no-fragmentation criterion.
+
 %% ----------------------------------------------------------------
 % 
 \section*{Acknowledgments}
+
+We acknowledge support from NSF grants AST-1312888 and AST-1615955, and NASA grant NNX15AB20G, as well as computational resources from NSF XSEDE, and Columbia University?s Yeti cluster. Simulations were run on the NASA Pleiades supercomputer through allocation SMD-15-6514 and were performed using the publicly-available Enzo code (http://enzo-project.org) and analyzed with the yt package (Turk et al. 2011). Enzo is the product of a collaborative effort of many independent scientists from numerous institutions around the world. Their commitment to open science has helped make this work possible.  The Flatiron Institute is supported by the Simons Foundation. 
+
 \bibliography{mn-jour,gc_paper}
 %
 %\label{lastpage}
