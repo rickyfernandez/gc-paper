@@ -1,12 +1,12 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%Title: plot_test
+%%Title: density_panel_test
 %%Creator: matplotlib version 1.4.0, http://matplotlib.org/
-%%CreationDate: Wed Apr 20 16:11:26 2016
+%%CreationDate: Mon Feb 20 15:41:36 2017
 %%Orientation: portrait
 %%BoundingBox: 90 108 522 684
 %%EndComments
 %%BeginProlog
-/mpldict 10 dict def
+/mpldict 11 dict def
 mpldict begin
 /m { moveto } bind def
 /l { lineto } bind def
@@ -1081,6 +1081,81 @@ end readonly def
 
 FontName currentdict end definefont pop
 %!PS-Adobe-3.0 Resource-Font
+%%Title: cmmi10
+%%Copyright: Copyright (C) 1994, Basil K. Malyshev. All Rights Reserved.012BaKoMa Fonts Collection, Level-B.
+%%Creator: Converted from TrueType to type 3 by PPR
+25 dict begin
+/_d{bind def}bind def
+/_m{moveto}_d
+/_l{lineto}_d
+/_cl{closepath eofill}_d
+/_c{curveto}_d
+/_sc{7 -1 roll{setcachedevice}{pop pop pop pop pop pop}ifelse}_d
+/_e{exec}_d
+/FontName /Cmmi10 def
+/PaintType 0 def
+/FontMatrix[.001 0 0 .001 0 0]def
+/FontBBox[-34 -250 1048 750]def
+/FontType 3 def
+/Encoding [ /Z ] def
+/FontInfo 10 dict dup begin
+/FamilyName (cmmi10) def
+/FullName (cmmi10) def
+/Notice (Copyright (C) 1994, Basil K. Malyshev. All Rights Reserved.012BaKoMa Fonts Collection, Level-B. ) def
+/Weight (Regular) def
+/Version (1.1/12-Nov-94) def
+/ItalicAngle 0.0 def
+/isFixedPitch false def
+/UnderlinePosition -133 def
+/UnderlineThickness 20 def
+end readonly def
+/CharStrings 1 dict dup begin
+/Z{{682 0 58 0 722 683 _sc
+58 8 _m
+58 17 60 25 65 31 _c
+615 648 _l
+468 648 _l
+419 648 378 642 346 630 _c
+314 618 287 599 266 573 _c
+245 546 228 509 214 463 _c
+212 457 209 454 204 454 _c
+195 454 _l
+188 454 185 458 185 467 _c
+248 674 _l
+249 680 252 683 258 683 _c
+714 683 _l
+719 683 722 680 722 675 _c
+722 665 720 658 716 654 _c
+168 38 _l
+320 38 _l
+}_e{378 38 424 45 458 60 _c
+492 74 518 97 538 128 _c
+558 159 577 204 596 262 _c
+596 264 598 266 600 268 _c
+602 270 604 271 606 271 _c
+615 271 _l
+621 271 625 266 625 258 _c
+546 9 _l
+543 3 540 0 536 0 _c
+67 0 _l
+61 0 58 2 58 8 _c
+_cl}_e}_d
+end readonly def
+
+/BuildGlyph
+ {exch begin
+ CharStrings exch
+ 2 copy known not{pop /.notdef}if
+ true 3 1 roll get exec
+ end}_d
+
+/BuildChar {
+ 1 index /Encoding get exch get
+ 1 index /BuildGlyph get exec
+}_d
+
+FontName currentdict end definefont pop
+%!PS-Adobe-3.0 Resource-Font
 %%Title: cmsy10
 %%Copyright: Copyright (C) 1994, Basil K. Malyshev. All Rights Reserved.012BaKoMa Fonts Collection, Level-B.
 %%Creator: Converted from TrueType to type 3 by PPR
@@ -1097,7 +1172,7 @@ FontName currentdict end definefont pop
 /FontMatrix[.001 0 0 .001 0 0]def
 /FontBBox[-29 -960 1123 779]def
 /FontType 3 def
-/Encoding [ /minus ] def
+/Encoding [ /minus /circledot ] def
 /FontInfo 10 dict dup begin
 /FamilyName (cmsy10) def
 /FullName (cmsy10) def
@@ -1109,7 +1184,7 @@ FontName currentdict end definefont pop
 /UnderlinePosition -133 def
 /UnderlineThickness 20 def
 end readonly def
-/CharStrings 1 dict dup begin
+/CharStrings 2 dict dup begin
 /minus{777 0 83 230 694 270 _sc
 102 230 _m
 96 230 92 232 88 236 _c
@@ -1123,6 +1198,53 @@ end readonly def
 685 232 681 230 676 230 _c
 102 230 _l
 _cl}_d
+/circledot{{777 0 56 -82 721 583 _sc
+389 -82 _m
+343 -82 301 -73 261 -56 _c
+221 -38 185 -15 154 15 _c
+122 45 98 81 81 122 _c
+64 162 56 205 56 250 _c
+56 295 64 338 81 378 _c
+98 418 122 453 154 485 _c
+185 516 221 540 261 557 _c
+301 574 343 583 389 583 _c
+434 583 477 574 517 557 _c
+557 539 593 515 624 485 _c
+654 454 678 418 695 378 _c
+712 338 721 295 721 250 _c
+}_e{721 205 712 162 695 122 _c
+677 81 653 45 623 15 _c
+593 -15 557 -38 517 -56 _c
+477 -73 434 -82 389 -82 _c
+389 -53 _m
+429 -53 468 -45 505 -29 _c
+542 -13 575 7 603 35 _c
+631 63 652 95 668 132 _c
+684 169 692 208 692 250 _c
+692 291 684 330 668 368 _c
+652 405 631 437 604 465 _c
+576 492 544 514 507 530 _c
+470 546 431 554 389 554 _c
+347 554 308 546 271 530 _c
+}_e{233 514 201 492 174 465 _c
+146 437 125 405 109 367 _c
+93 329 85 290 85 250 _c
+85 210 92 171 108 133 _c
+124 95 146 63 174 35 _c
+202 7 235 -13 273 -29 _c
+310 -45 349 -53 389 -53 _c
+389 178 _m
+369 178 352 185 338 199 _c
+324 213 317 230 317 250 _c
+317 263 320 275 326 286 _c
+332 296 341 305 353 312 _c
+364 318 376 322 389 322 _c
+401 322 413 318 424 312 _c
+}_e{434 305 443 296 450 286 _c
+456 275 460 263 460 250 _c
+460 230 452 213 438 199 _c
+424 185 407 178 389 178 _c
+_cl}_e}_d
 end readonly def
 
 /BuildGlyph
@@ -3361,6 +3483,16 @@ grestore
 } bind def
 216 394.529 o
 grestore
+/BitstreamVeraSerif-Roman findfont
+12.000 scalefont
+setfont
+gsave
+40.214214 391.216532 translate
+0.000000 rotate
+0.000000 0.000000 m /minus glyphshow
+10.054688 0.000000 m /three glyphshow
+17.689453 0.000000 m /five glyphshow
+grestore
 gsave
 /o {
 gsave
@@ -3400,6 +3532,11 @@ grestore
 216 429.213 o
 grestore
 gsave
+57.307964 425.900403 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+grestore
+gsave
 /o {
 gsave
 newpath
@@ -3437,6 +3574,22 @@ grestore
 } bind def
 216 463.897 o
 grestore
+gsave
+49.932964 460.584274 translate
+0.000000 rotate
+0.000000 0.000000 m /three glyphshow
+7.634766 0.000000 m /five glyphshow
+grestore
+gsave
+32.542339 412.486341 translate
+90.000000 rotate
+0.000000 0.000000 m /y glyphshow
+6.779297 0.000000 m /space glyphshow
+10.593750 0.000000 m /parenleft glyphshow
+15.275391 0.000000 m /p glyphshow
+22.957031 0.000000 m /c glyphshow
+29.677734 0.000000 m /parenright glyphshow
+grestore
 1.000 setgray
 /BitstreamVeraSerif-Roman findfont
 8.000 scalefont
@@ -3454,6 +3607,50 @@ gsave
 31.667969 0.000000 m /y glyphshow
 36.187500 0.000000 m /r glyphshow
 40.011719 0.000000 m /parenright glyphshow
+grestore
+gsave
+72.309677 493.625806 translate
+0.000000 rotate
+/BitstreamVeraSerif-Roman findfont
+8.0 scalefont
+setfont
+0.000000 0.921875 moveto
+/zero glyphshow
+
+5.089844 0.921875 moveto
+/period glyphshow
+
+7.632812 0.921875 moveto
+/zero glyphshow
+
+12.722656 0.921875 moveto
+/one glyphshow
+
+17.812500 0.921875 moveto
+/space glyphshow
+
+20.355469 0.921875 moveto
+/parenleft glyphshow
+
+/Cmmi10 findfont
+8.0 scalefont
+setfont
+23.476562 0.921875 moveto
+/Z glyphshow
+
+/Cmsy10 findfont
+5.6 scalefont
+setfont
+29.916875 -1.118875 moveto
+/circledot glyphshow
+
+/BitstreamVeraSerif-Roman findfont
+8.0 scalefont
+setfont
+34.618906 0.921875 moveto
+/parenright glyphshow
+
+
 grestore
 gsave
 216 354.89 m
@@ -5754,6 +5951,53 @@ gsave
 40.011719 0.000000 m /parenright glyphshow
 grestore
 gsave
+220.954839 493.625806 translate
+0.000000 rotate
+/BitstreamVeraSerif-Roman findfont
+8.0 scalefont
+setfont
+0.000000 0.921875 moveto
+/zero glyphshow
+
+5.089844 0.921875 moveto
+/period glyphshow
+
+7.632812 0.921875 moveto
+/zero glyphshow
+
+12.722656 0.921875 moveto
+/zero glyphshow
+
+17.812500 0.921875 moveto
+/one glyphshow
+
+22.902344 0.921875 moveto
+/space glyphshow
+
+25.445312 0.921875 moveto
+/parenleft glyphshow
+
+/Cmmi10 findfont
+8.0 scalefont
+setfont
+28.566406 0.921875 moveto
+/Z glyphshow
+
+/Cmsy10 findfont
+5.6 scalefont
+setfont
+35.006719 -1.118875 moveto
+/circledot glyphshow
+
+/BitstreamVeraSerif-Roman findfont
+8.0 scalefont
+setfont
+39.708750 0.921875 moveto
+/parenright glyphshow
+
+
+grestore
+gsave
 67.3548 206.245 m
 216 206.245 l
 216 354.89 l
@@ -7970,6 +8214,16 @@ grestore
 } bind def
 216 245.884 o
 grestore
+/BitstreamVeraSerif-Roman findfont
+12.000 scalefont
+setfont
+gsave
+40.214214 242.571371 translate
+0.000000 rotate
+0.000000 0.000000 m /minus glyphshow
+10.054688 0.000000 m /three glyphshow
+17.689453 0.000000 m /five glyphshow
+grestore
 gsave
 /o {
 gsave
@@ -8009,6 +8263,11 @@ grestore
 216 280.568 o
 grestore
 gsave
+57.307964 277.255242 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+grestore
+gsave
 /o {
 gsave
 newpath
@@ -8046,7 +8305,26 @@ grestore
 } bind def
 216 315.252 o
 grestore
+gsave
+49.932964 311.939113 translate
+0.000000 rotate
+0.000000 0.000000 m /three glyphshow
+7.634766 0.000000 m /five glyphshow
+grestore
+gsave
+32.542339 263.841179 translate
+90.000000 rotate
+0.000000 0.000000 m /y glyphshow
+6.779297 0.000000 m /space glyphshow
+10.593750 0.000000 m /parenleft glyphshow
+15.275391 0.000000 m /p glyphshow
+22.957031 0.000000 m /c glyphshow
+29.677734 0.000000 m /parenright glyphshow
+grestore
 1.000 setgray
+/BitstreamVeraSerif-Roman findfont
+8.000 scalefont
+setfont
 gsave
 72.309677 211.200000 translate
 0.000000 rotate
@@ -14824,6 +15102,16 @@ grestore
 } bind def
 255.639 206.245 o
 grestore
+/BitstreamVeraSerif-Roman findfont
+12.000 scalefont
+setfont
+gsave
+244.068397 44.475000 translate
+0.000000 rotate
+0.000000 0.000000 m /minus glyphshow
+10.054688 0.000000 m /three glyphshow
+17.689453 0.000000 m /five glyphshow
+grestore
 gsave
 /o {
 gsave
@@ -14863,6 +15151,11 @@ grestore
 290.323 206.245 o
 grestore
 gsave
+287.299143 44.475000 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+grestore
+gsave
 /o {
 gsave
 newpath
@@ -14899,6 +15192,22 @@ stroke
 grestore
 } bind def
 325.006 206.245 o
+grestore
+gsave
+318.295514 44.475000 translate
+0.000000 rotate
+0.000000 0.000000 m /three glyphshow
+7.634766 0.000000 m /five glyphshow
+grestore
+gsave
+273.619456 27.850000 translate
+0.000000 rotate
+0.000000 0.000000 m /x glyphshow
+6.767578 0.000000 m /space glyphshow
+10.582031 0.000000 m /parenleft glyphshow
+15.263672 0.000000 m /p glyphshow
+22.945312 0.000000 m /c glyphshow
+29.666016 0.000000 m /parenright glyphshow
 grestore
 gsave
 /o {
@@ -15015,6 +15324,9 @@ grestore
 364.645 166.606 o
 grestore
 1.000 setgray
+/BitstreamVeraSerif-Roman findfont
+8.000 scalefont
+setfont
 gsave
 220.954839 62.554839 translate
 0.000000 rotate
