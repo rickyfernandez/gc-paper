@@ -126,7 +126,7 @@ In addition, we refined based on the Jeans length such that it was always refine
 the maximum refinement is reached).
 
 Our simulations included self gravity and radiative cooling using the
-Grackle library; details described in \cite{Bryan2014}. The metal cooling (and
+\textsc{grackle} library; details described in \cite{Bryan2014}. The metal cooling (and
 heating) rates are computed using a non-equilibrium model for H, H$^+$, He, He$^+$, He$^++$ and e$^-$
 and a table computed from Cloudy for metal-line cooling (and heating), as described in \citet{Smith2016}.
 When a radiative background is included, we use \cite{Haardt2012} at $z=$0
@@ -154,16 +154,24 @@ where $k_B$ is the Boltzmann constant. This corresponds to a cloud on the point 
 gravitational collapse within nearly comparable cooling and collapse times,
 depending on the chosen metallicity (which we will vary).
 
-Such a cloud may naturally arise during the early formation history ($z \sim 5 to 10$) of typical galactic halos [REF].  The virial temperatures of such progenitor halos are typically around $t_{\rm vir} \sim 10^{4-5}$ K, and the required densities of our cloud correspond to roughly an overdensity of $10^4$ relative to the mean at that epoch.  Therefore our required densities are modestly above typical halo properties and require only a modest amount of cooling.  We note in addition that it is natural for the gas temperature to stall at temperatures just below $10^4$ K for such low metallicity gas, as the above figures make clear.  Finally, we do not discuss the fate of any dark matter in this scenario, but note that our clouds are most likely to form during the merger phase of such halos, when dynamics can lead to compression and so the clouds may well form away from the central dark matter peak.
+Such a cloud may naturally arise during the early formation history ($z \sim 5$ to $10$)
+of typical galactic halos [REF].  The virial temperatures of such progenitor halos are
+typically around $t_{\rm vir} \sim 10^{4-5}$ K, and the required densities of our cloud
+correspond to roughly an overdensity of $10^4$ relative to the mean at that epoch.
+Therefore our required densities are modestly above typical halo properties and require
+only a modest amount of cooling.  We note in addition that it is natural for the gas
+temperature to stall at temperatures just below $10^4$ K for such low metallicity gas,
+as the above figures make clear.  Finally, we do not discuss the fate of any dark matter 
+in this scenario, but note that our clouds are most likely to form during the merger
+phase of such halos, when dynamics can lead to compression and so the clouds may well
+form away from the central dark matter peak.
 
 In addition, we add turbulence to the cloud following a power spectrum of
 $v_k^2 \propto k^{-4}$ for the velocity field.  We include only mode between
 $k_{\rm min}=$ 9 and $k_{\rm max} =$ 19 {\bf (units?)} such that the input modes are well resolved
 and have wavelengths smaller than the cloud radius.  We set the turbulent velocities
-such that rms velocity of the gas is XXX km/s. Figure~\ref{fig:initial_setup} shows 
-a slice through the center of the cloud with four panels providing
-the initial number density, temperature, velocity magnitude and pressure.  We use
-this initial conditions for essentially all of the runs analyzed in this paper.
+such that rms velocity of the gas is 7.97 km/s. We use this initial conditions for
+essentially all of the runs analyzed in this paper.
 
 
 {\bf Add table listing runs with Z, radiation strength.}
@@ -265,7 +273,7 @@ stronger heating (right column).
 
 \subsubsection{$Z = 0.01$, varying heating}
 
-We next turn to simulations which include the impact of radiative heating, either from a metagalactic background or from nearby star formation (but assuming there is no direct physical impact on our cloud).  We have carried out two additions simulations to explore this: the first has a radiative background typical of the \citet{Haardt2012} metagalctic background at $z=0$, as modeled with our cooling package {\sc gracle} (and ultimately Cloudy).  This is a relatively mild heating source, but is sufficient to heat the low-temperature gas at low metallicity (see Figure~\ref{fig:cooling_to_freefall_background} for the resulting cooling times).  The second simulation adds an additional specific heating rate of XX erg/s/g, as might arise from a photo-electric heating term arising from a nearby unattenuated UV source.
+We next turn to simulations which include the impact of radiative heating, either from a metagalactic background or from nearby star formation (but assuming there is no direct physical impact on our cloud).  We have carried out two additions simulations to explore this: the first has a radiative background typical of the \citet{Haardt2012} metagalctic background at $z=0$, as modeled with our cooling package \textsc{grackle} (and ultimately Cloudy).  This is a relatively mild heating source, but is sufficient to heat the low-temperature gas at low metallicity (see Figure~\ref{fig:cooling_to_freefall_background} for the resulting cooling times).  The second simulation adds an additional specific heating rate of $8.25\times10^{-26}$ erg/s/g, as might arise from a photo-electric heating term arising from a nearby unattenuated UV source.
 
 
 % To do: more on radiation heating rate (J and metallicity) and optical depth [here or in discussion]
@@ -300,17 +308,29 @@ In the discussion, we will develop a simple analytic model based on the insights
 \includegraphics[width=8.5cm]{Images/cloud_collision_0006_Projection_z_density.png}
 \includegraphics[width=8.5cm]{Images/cloud_collision_0006_Projection_z_temperature_density.png}
 \end{center}
-\caption{\label{fig:big_projections} A projection of the surface density (left) and density-weighted temperature (right) for the large mass and high radiative heating rate simulation at t=XXX Myr.}
+\caption{\label{fig:big_projections} A projection of the surface density (left) and density-weighted temperature (right)
+for the large mass and high radiative heating rate simulation at t=1.5 Myr.}
 \end{figure*}
 
 \subsubsection{Higher mass, higher radiative collapse}
 
-Finally, to further explore the parameter space of cloud size and radiative background, we do one run with a three times larger mass, keeping the radius constant, which results in a significant increase in the density.  Note that this means the cloud is no longer Bonner-Ebert stable and should not be gravitationally unstable to collapse even without any further cooling.  Without any other change, the discussion above makes it clear that this cloud would simply fragment before collapsing since Figure~\ref{fig:cooling_to_freefall} makes it clear that the cooling time to dynamical time ratio only decreases with increasing density.  Note that we keep the metallicity at $Z.Z_{\odot}=0.01$.  The earlier discussion makes clear that increasing the radiative heating rate would enhance the stability, forcing the evolution of the gas along the density-temperature equilibrium curve.  We test this by increasing the radiative heating rate by a factor of five.
+%Finally, to further explore the parameter space of cloud size and radiative background, we do one run with a three times larger mass,
+Finally, to further explore the parameter space of cloud size and radiative background, we do one run with a five times larger mass,
+keeping the radius constant, which results in a significant increase in the density.  Note that this means the cloud is no longer Bonner-Ebert
+stable and should not be gravitationally unstable to collapse even without any further cooling.  Without any other change, the discussion above
+makes it clear that this cloud would simply fragment before collapsing since Figure~\ref{fig:cooling_to_freefall} makes it clear that the cooling
+time to dynamical time ratio only decreases with increasing density.  Note that we keep the metallicity at $Z=0.01 Z_{\odot}$. The earlier
+discussion makes clear that increasing the radiative heating rate would enhance the stability, forcing the evolution of the gas along the
+density-temperature equilibrium curve. We test this by increasing the radiative heating rate by a factor of ten.
+%density-temperature equilibrium curve.  We test this by increasing the radiative heating rate by a factor of five.
 
-The result of this simulation is shown in Figure~\ref{fig:big_projections}, where, unlike the previous images, we show the density and temperature projections.  These show two things: first, as expected, the fragmentation as been delayed due to the radiative heating, giving the cloud time to globally collapse before small-scale (turbulence driven) fragmentation occurs.  Second, these projections emphasize the rich structure visible in the full three dimensional distribution, with clumps and filaments (these features were present in previous simulations but not as evident in the slices shown earlier).  The density-temperature profiles (not shown) are consistent with the expected density-temperature equilibrium, and the overall profiles are also consistent with the earlier simulations which collapse globally before fragmenting.  We do note, as we will discuss in more detail below, that this experiment is, in some sense pedagogical, as we have not attempted a self-consistent radiative transfer calculation.
-
-
-
+The result of this simulation is shown in Figure~\ref{fig:big_projections}, where, unlike the previous images, we show the density and temperature projections.
+These show two things: first, as expected, the fragmentation as been delayed due to the radiative heating, giving the cloud time to globally collapse before
+small-scale (turbulence driven) fragmentation occurs.  Second, these projections emphasize the rich structure visible in the full three dimensional distribution,
+with clumps and filaments (these features were present in previous simulations but not as evident in the slices shown earlier). The density-temperature
+profiles (not shown) are consistent with the expected density-temperature equilibrium, and the overall profiles are also consistent with the earlier simulations
+which collapse globally before fragmenting.  We do note, as we will discuss in more detail below, that this experiment is, in some sense pedagogical, as we
+have not attempted a self-consistent radiative transfer calculation.
 
 
 %% ----------------------------------------------------------------
@@ -389,7 +409,7 @@ Here, we briefly remind readers of the many simplifications.  As we have argued 
 
 First, the initial conditions are quite simplistic, with a Bonner-Ebert sphere and some imposed turbulence.  We do not expect the results to strongly depend on the details of the turbulence; however we have not really discussed how such initial conditions might arise.  One possibility is that colliding flows in low $v_{\rm vir}$ halos shock heat and cool down to $10^4$ K (but not below), settling into the equilibrium configuration envisioned.  More realistic (future) work would explore colliding flows or colliding clouds to better understand the transition between the fast and slow modes discussed above.  Ideally, the initial conditions would be drawn from large-scale cosmological simulations which self-consistently model the gas motion within realistic dark-matter halos and the build-up of metals and external radiation fields (but cannot model the small-scale fragmentation modeled here).
 
-More seriously, our radiative and chemical model is somewhat idealized.  Although the {\sc Grackle} cooling we adopt is based on Cloudy and so, radiative processes aside, quite accurate, our treatment of a uniformly constant radiative heating rate fails to take account the full complexity of more realistic treatments.  Our uniform rate is best matched to a far-UV photo-electric heating source; however, the low metal content we assume implies a similarly low (or lower) dust content, reducing the efficiency of photoelectric heating. {\bf Estimate background rate and require local SFR}  Heating by an X-ray source would also provide uniform heating, but at the cost of additional ionization.  In addition, local photoelectric heating would likely be accompanied by ionizing photons (although a large local column of neutral gas may slow the ionization front).  Finally, we do not include H$_2$ cooling which may be important [GLOVER REF], although a Lyman-Werner background will help to photo-dissociate the molecule.
+More seriously, our radiative and chemical model is somewhat idealized.  Although the \textsc{grackle} cooling we adopt is based on Cloudy and so, radiative processes aside, quite accurate, our treatment of a uniformly constant radiative heating rate fails to take account the full complexity of more realistic treatments.  Our uniform rate is best matched to a far-UV photo-electric heating source; however, the low metal content we assume implies a similarly low (or lower) dust content, reducing the efficiency of photoelectric heating. {\bf Estimate background rate and require local SFR}  Heating by an X-ray source would also provide uniform heating, but at the cost of additional ionization.  In addition, local photoelectric heating would likely be accompanied by ionizing photons (although a large local column of neutral gas may slow the ionization front).  Finally, we do not include H$_2$ cooling which may be important [GLOVER REF], although a Lyman-Werner background will help to photo-dissociate the molecule.
 
 There are also a range of other physical processes that we do not include which may play a role in such systems, of which the absence of magnetic fields may be the most glaring.  Finally, we explore the fragmentation of the clouds, but do not attempt to model the formation of individual stars, nor their feedback effects.  Previous work that has examined the impact of feedback finds that in order to form bound clusters, the efficiency of star formation must be high [REFS], a result which helps to motivate our requirement that fragmentation must not occur until the gas density is very high (so that fragmentation completes on a short timescale, before feedback can impact the cluster evolution).
 
@@ -415,7 +435,11 @@ Future steps would be to (i) improve the microphysical model with a more realist
 % 
 \section*{Acknowledgments}
 
-We acknowledge support from NSF grants AST-1312888 and AST-1615955, and NASA grant NNX15AB20G, as well as computational resources from NSF XSEDE, and Columbia University?s Yeti cluster. Simulations were run on the NASA Pleiades supercomputer through allocation SMD-15-6514 and were performed using the publicly-available Enzo code (http://enzo-project.org) and analyzed with the yt package (Turk et al. 2011). Enzo is the product of a collaborative effort of many independent scientists from numerous institutions around the world. Their commitment to open science has helped make this work possible.  The Flatiron Institute is supported by the Simons Foundation. 
+We acknowledge support from NSF grants AST-1312888 and AST-1615955, and NASA grant NNX15AB20G, as well as computational resources from NSF XSEDE,
+and Columbia University's Yeti cluster. Simulations were run on the Texas Advanced Computing Center Stampede supercomputer through allocation SMD-15-6514? and were performed
+using the publicly-available Enzo code (http://enzo-project.org) and analyzed with the yt package (Turk et al. 2011). Enzo is the product of a
+collaborative effort of many independent scientists from numerous institutions around the world. Their commitment to open science has helped make
+this work possible. The Flatiron Institute is supported by the Simons Foundation. 
 
 \bibliography{mn-jour,gc_paper}
 %
