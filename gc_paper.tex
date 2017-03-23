@@ -92,12 +92,12 @@ Figure~\ref{fig:cooling_to_freefall} is a panel showing the ratio of log$(|t_{co
 \begin{center}
 \mbox{\includegraphics[width=8.5cm]{Images/cooling_to_freefall}}
 \end{center}
-\caption{\label{fig:cooling_to_freefall_background} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.  This plot is similar to Figure~\ref{fig:cooling_to_freefall}, except that we include a radiative heating source as specified in \citet{Haardt2012}, at $z=$0.}
+\caption{\label{fig:cooling_to_freefall_background} The ratio of cooling time to dynamical time for gas with a range of density, temperature and metallicity values, as labelled.  This plot is similar to Figure~\ref{fig:cooling_to_freefall}, except that we include a radiative heating source as specified in \citet{Haardt2012}, at $z=$ 0.}
 \end{figure}
 
 This is all computed in the absence of any radiative background.  In Figure~\ref{fig:cooling_to_freefall_background}, 
 the one zone models are recalculated as previous except allowing for radiative heating.   Although the radiative background
-is uncertain, we adopt the radiative background from \citet{Haardt2012} at $z=$0 
+is uncertain, we adopt the radiative background from \citet{Haardt2012} at $z=$ 0 
 in order to show the kind of effect we expect.  This does not change the high gas cooling rate, but it does affect the lower-temperature gas cooling time.   In particular, we see that an equilibrium curve is present where
 heating and cooling are balanced. We no longer have the extended region where cooling and dynamical time scales are 
 comparable but now are concentrated along the equilibrium curve. Furthermore, it should be expected that gas will
@@ -129,7 +129,7 @@ Our simulations included self gravity and radiative cooling using the
 \textsc{grackle} library; details described in \cite{Bryan2014}. The metal cooling (and
 heating) rates are computed using a non-equilibrium model for H, H$^+$, He, He$^+$, He$^++$ and e$^-$
 and a table computed from Cloudy for metal-line cooling (and heating), as described in \citet{Smith2016}.
-When a radiative background is included, we use \cite{Haardt2012} at $z=$0
+When a radiative background is included, we use \cite{Haardt2012} at $z=$ 0.
 
 %\begin{figure}
 %\begin{center}
@@ -152,7 +152,8 @@ assumptions outlined in Section~\ref{sec:basic}, we chose
 $M_{BE}=10^6$ \msun, $T_{BE}=6000$ K, and $P_{ext}=1.8\times10^5\times k_B$, 
 where $k_B$ is the Boltzmann constant. This corresponds to a cloud on the point of
 gravitational collapse within nearly comparable cooling and collapse times,
-depending on the chosen metallicity (which we will vary).
+depending on the chosen metallicity and heating (which we will vary). Table~\ref{table:parameters}
+summarizes the parameters for each simulation numbered by order of appearance.
 
 Such a cloud may naturally arise during the early formation history ($z \sim 5$ to $10$)
 of typical galactic halos [REF].  The virial temperatures of such progenitor halos are
@@ -170,11 +171,33 @@ In addition, we add turbulence to the cloud following a power spectrum of
 $v_k^2 \propto k^{-4}$ for the velocity field.  We include only mode between
 $k_{\rm min}=$ 9 and $k_{\rm max} =$ 19 {\bf (units?)} such that the input modes are well resolved
 and have wavelengths smaller than the cloud radius.  We set the turbulent velocities
-such that rms velocity of the gas is 7.97 km/s. We use this initial conditions for
-essentially all of the runs analyzed in this paper.
+such that rms velocity of the gas is equal to the sound speed of the cloud $c_s = 7.97$ km/s.
+We use this initial conditions for essentially all of the runs analyzed in this paper.
 
-
-{\bf Add table listing runs with Z, radiation strength.}
+\begin{table}
+       \begin{center}
+	\begin{tabular}{@{}cccccc}
+	\hline
+	%Run & $M$ (M$_{\odot}$) & $\overline{\rho}$ $(\mathrm{g/cm^{-3}})$ & $T$ (K) & $Z$ (Z$_{\odot}$) & $\Gamma$ ($\mathrm{erg/s/g}$)\\ 
+	Run & $M$ (M$_{\odot}$) & $T$ (K) & $Z$ (Z$_{\odot}$) & Heating & $\Gamma$ ($\mathrm{erg/s/g}$)\\ 
+	\hline
+	    %1 & $10^6$ & 7.80$ \times 10^3$ & 6$ \times 10^3$ & $10^{-3}$ \\
+        %2 & $10^6$ & 1.05$ \times 10^4$ & 6$ \times 10^3$ & $10^{-2}$ \\
+        %3 & $10^6$ & 8.50$ \times 10^3$ & 6$ \times 10^3$ & $10^{-2}$ \\ 
+        %4 & $10^6$ & 8.50$ \times 10^3$ & 6$ \times 10^3$ & $10^{-2}$ & 8$ \times 10^{-26}$\\ 
+        %5 & $10^6$ & 8.50$ \times 10^3$ & 6$ \times 10^3$ & $10^{-2}$ & 8$ \times 10^{-26}$\\ 
+	    1 & $10^6$ & 6$ \times 10^3$ & $10^{-3}$ \\
+        2 & $10^6$ & 6$ \times 10^3$ & $10^{-2}$ \\
+        3 & $10^6$ & 6$ \times 10^3$ & $10^{-2}$ & \textsc{grackle} \\ 
+        4 & $10^6$ & 6$ \times 10^3$ & $10^{-2}$ & \textsc{grackle} & 8.5$ \times 10^{-26}$\\ 
+        5 & 5$\times 10^6$ & 6$ \times 10^3$ & $10^{-2}$ & \textsc{grackle} & 8.5$ \times 10^{-25}$\\ 
+       \hline
+	\end{tabular}
+	\caption{Parameters for each simulation numbered by order of appearance. Heating is broken into components, heating from
+    a metagalatic background or nearby star formation computed by cloudy \textsc{grackle} heating by an additional constant specific heating rate $\Gamma$.}
+	\label{table:parameters}
+	\end{center}
+\end{table}
 
 %% ----------------------------------------------------------------
 % 
@@ -271,14 +294,26 @@ stronger heating (right column).
 
 \subsection{Runs with Photo-heating}
 
-\subsubsection{$Z = 0.01$, varying heating}
+\subsubsection{$Z=10^{-2}Z_\odot$, varying heating}
 
-We next turn to simulations which include the impact of radiative heating, either from a metagalactic background or from nearby star formation (but assuming there is no direct physical impact on our cloud).  We have carried out two additions simulations to explore this: the first has a radiative background typical of the \citet{Haardt2012} metagalctic background at $z=0$, as modeled with our cooling package \textsc{grackle} (and ultimately Cloudy).  This is a relatively mild heating source, but is sufficient to heat the low-temperature gas at low metallicity (see Figure~\ref{fig:cooling_to_freefall_background} for the resulting cooling times).  The second simulation adds an additional specific heating rate of $8.25\times10^{-26}$ erg/s/g, as might arise from a photo-electric heating term arising from a nearby unattenuated UV source.
+We next turn to simulations which include the impact of radiative heating, either from a metagalactic background or from nearby star
+formation (but assuming there is no direct physical impact on our cloud).  We have carried out two additions simulations to explore
+this: the first has a radiative background typical of the \citet{Haardt2012} metagalctic background at $z=0$, as modeled with our
+cooling package \textsc{grackle} (and ultimately Cloudy).  This is a relatively mild heating source, but is sufficient to heat the
+low-temperature gas at low metallicity (see Figure~\ref{fig:cooling_to_freefall_background} for the resulting cooling times).
+The second simulation adds an additional specific heating rate of $8.25\times10^{-26}$ erg/s/g, as might arise from a photo-electric
+heating term arising from a nearby unattenuated UV source.
 
 
 % To do: more on radiation heating rate (J and metallicity) and optical depth [here or in discussion]
 
-Figure~\ref{fig:profiles_heating} shows the radial density and temperature profiles for the two runs (left and right set of panels), and Figure~\ref{fig:density_heating} shows the density slices for the same set of times and heating rates, also for the two runs (left -- low heating, right -- higher heating).  These plots demonstrate that a radiative heating source can substantially change the nature of the collapse, for a fixed metallicity ($Z=0.01 Z_\odot$ in this case).   Before discussing the results in more detail, we note that the later two times (t= 4.0 and 5.75 Myr) show a shock around the edges of the box due to the (artificial) periodic boundary conditions used.   These shocks arise from a mild outflow driven by the expansion of the cloud -- caused by the photo-heating -- and do not affect the evolution in the central part of the cloud (the low density gas at the edges of the box is flowing faster than its sound speed).
+Figure~\ref{fig:profiles_heating} shows the radial density and temperature profiles for the two runs (left and right set of panels),
+and Figure~\ref{fig:density_heating} shows the density slices for the same set of times and heating rates, also for the two runs
+(left -- low heating, right -- higher heating). These plots demonstrate that a radiative heating source can substantially change
+the nature of the collapse, for a fixed metallicity ($Z=10^{-2}$ $Z_\odot$ in this case).   Before discussing the results in more detail,
+we note that the later two times (t = 4.0 and 5.75 Myr) show a shock around the edges of the box due to the (artificial) periodic
+boundary conditions used.   These shocks arise from a mild outflow driven by the expansion of the cloud -- caused by the photo-heating --
+and do not affect the evolution in the central part of the cloud (the low density gas at the edges of the box is flowing faster than its sound speed).
 
 \begin{figure*}
 \begin{center}
@@ -289,11 +324,24 @@ Figure~\ref{fig:profiles_heating} shows the radial density and temperature profi
 \caption{\label{fig:phase_panels} Phase plots showing, in the left set of panels, the density-temperature distribution and, in the right set of panels, the pressure-temperature of the gas in our two simulations with varying radiative heating rates.   In each set of panels, time runs from top to bottom at the same time slices as in Figure~\ref{fig:density_heating}, and within each set of 6 panels the left side is for the low-radiative heating run, while the right side is the higher heating simulation.  The color coding indicates the amount of mass in each phase.   In each plot, dotted lines show the equilibrium density-temperature relation, while dot-dashed lines in the bottom row provides lines of constant Jeans mass, as labelled.}
 \end{figure*}
 
-In the mild heating case, collapse proceeds in a roughly similar fashion to the no-heating run, except that the temperature does not fall as quickly, particularly in the center.  As the profiles and slices show, gas begins to fragment, but radiative heating prevents collapse to very high densities.  Gas flows in to the center and fragmentation eventually sets in there, with densities climbing to large values in the central 5-10 pc.  The cloud ends up with a central multi-phase core, with forming clumps, and a smooth outer envelope.  The core is not quite as compact as for the $Z=0.001$, no-radiation run, but compared to the $Z=0.01$, no-radiation case, fragmentation only occurs in the central 5-10 pc.
+In the mild heating case, collapse proceeds in a roughly similar fashion to the no-heating run, except that the temperature does not fall as quickly,
+particularly in the center. As the profiles and slices show, gas begins to fragment, but radiative heating prevents collapse to very high densities.
+Gas flows in to the center and fragmentation eventually sets in there, with densities climbing to large values in the central 5-10 pc. The cloud
+ends up with a central multi-phase core, with forming clumps, and a smooth outer envelope. The core is not quite as compact as for the
+$Z=10^{-3}$ $Z_\odot$, no-radiation run, but compared to the $Z=10^{-2}$ $Z_\odot$, no-radiation case, fragmentation only occurs in the central 5-10 pc.
 
-The higher radiative heating case shows, despite only a relatively small increase in the heating rate, a substantially different evolution.  Again, gas flows in and fragmentation begins in the central region, but this time the gas is unable to complete fragmentation, and the cloud ends up nearly entirely smooth with (almost) no star forming regions.
+The higher radiative heating case shows, despite only a relatively small increase in the heating rate, a substantially different evolution. Again,
+gas flows in and fragmentation begins in the central region, but this time the gas is unable to complete fragmentation, and the cloud ends up nearly
+entirely smooth with (almost) no star forming regions.
 
-The reason behind this evolution is easier to understand through phase diagrams.  In Figure~\ref{fig:phase_panels}, we show the density-temperature and pressure-temperature distributions of our two runs at the same times as in the previous plots.  The gas starts at $t=0$ (not shown) mostly in a small region in the right hand side of each diagram (with $T \sim 6000$ K and $P \sim 10^{-10}$ dyne cm$^{-2}$).  In each case, the gas rapidly moves into thermal equilibrium and so follows the equilibrium density-temperature relation shown as a dotted line in the plots.  The relation is particularly tight for the higher radiative heating run at late times, but is generally well-followed in all runs at all times.  However, the larger difference is where the gas evolves to along this curve -- at early times, in both cases, the gas is mostly in the warmer, lower-density phase.  In the lower-heating run, some gas manages to cool and move into the upper left-region (where the Jeans mass decreases and star formation can commence), while in the higher heating run, essentially no gas moves in that direction.  
+The reason behind this evolution is easier to understand through phase diagrams.  In Figure~\ref{fig:phase_panels}, we show the density-temperature
+and pressure-temperature distributions of our two runs at the same times as in the previous plots.  The gas starts at $t=0$ (not shown) mostly in a
+small region in the right hand side of each diagram (with $T \sim 6000$ K and $P \sim 10^{-10}$ dyne cm$^{-2}$).  In each case, the gas rapidly moves
+into thermal equilibrium and so follows the equilibrium density-temperature relation shown as a dotted line in the plots. The relation is particularly
+tight for the higher radiative heating run at late times, but is generally well-followed in all runs at all times. However, the larger difference is
+where the gas evolves to along this curve -- at early times, in both cases, the gas is mostly in the warmer, lower-density phase. In the lower-heating
+run, some gas manages to cool and move into the upper left-region (where the Jeans mass decreases and star formation can commence), while in the higher
+heating run, essentially no gas moves in that direction.  
 
 The reason for this striking difference is made clear in the pressure-temperature distribution plot.  Recall that the cloud begins in pressure equilibrium, with a small range of pressures.  Therefore, the cloud has two constraints in this diagram: the equilibrium curve as shown, and a nearly constant pressure constraint, coming from pressure equilibrium in the cloud.  This leads to multiple phases, since the equilibrium curve has a small region from 1000-5000 K where it is thermally unstable in the classic sense of REF.  This produces two stable regions: one at low temperatures ($T \sim 1000$ K and below) and one at higher temperatures, close to $10^4$ K.   
 
@@ -319,13 +367,13 @@ Finally, to further explore the parameter space of cloud size and radiative back
 keeping the radius constant, which results in a significant increase in the density.  Note that this means the cloud is no longer Bonner-Ebert
 stable and should not be gravitationally unstable to collapse even without any further cooling.  Without any other change, the discussion above
 makes it clear that this cloud would simply fragment before collapsing since Figure~\ref{fig:cooling_to_freefall} makes it clear that the cooling
-time to dynamical time ratio only decreases with increasing density.  Note that we keep the metallicity at $Z=0.01 Z_{\odot}$. The earlier
+time to dynamical time ratio only decreases with increasing density.  Note that we keep the metallicity at $Z=10^{-2}$ $Z_{\odot}$. The earlier
 discussion makes clear that increasing the radiative heating rate would enhance the stability, forcing the evolution of the gas along the
 density-temperature equilibrium curve. We test this by increasing the radiative heating rate by a factor of ten.
 %density-temperature equilibrium curve.  We test this by increasing the radiative heating rate by a factor of five.
 
 The result of this simulation is shown in Figure~\ref{fig:big_projections}, where, unlike the previous images, we show the density and temperature projections.
-These show two things: first, as expected, the fragmentation as been delayed due to the radiative heating, giving the cloud time to globally collapse before
+These show two things: first, as expected, the fragmentation has been delayed due to the radiative heating, giving the cloud time to globally collapse before
 small-scale (turbulence driven) fragmentation occurs.  Second, these projections emphasize the rich structure visible in the full three dimensional distribution,
 with clumps and filaments (these features were present in previous simulations but not as evident in the slices shown earlier). The density-temperature
 profiles (not shown) are consistent with the expected density-temperature equilibrium, and the overall profiles are also consistent with the earlier simulations
