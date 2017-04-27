@@ -47,7 +47,7 @@ ${2}$Center for Computational Astrophysics, Flatiron Institute, 162 Fifth Avenue
 
 \begin{abstract}
 
-We explore the relative role of small-scale fragmentation and global collapse in low-metallicity clouds, pointing out that in such clouds the cooling time may be longer than free-free time, allowing the cloud to collapse before it can fragment.  This, we argue, may help explain the formation of the low-metallicity component of globular clusters, since such dense stellar systems need a large amount of gas to be collected in a small region (without any star formation during the collapse).  We carry out numerical simulation of low-metallicity Bonner-Ebert stable gas clouds, demonstrating that there exists a critical metallicity (between 0.001 and 0.01 $Z_\odot$) below which the cloud collapses globally without fragmentation.  We also run simulations including a background radiative heating source, showing that this can also produce clouds that do not fragment, provided the metallicity is again below a critical value (which depends on the heating rate and is generally larger than the no-heating case).
+We explore the relative role of small-scale fragmentation and global collapse in low-metallicity clouds, pointing out that in such clouds the cooling time may be longer than the free-fall time, allowing the cloud to collapse globally before it can fragment.  This, we argue, may help explain the formation of the low-metallicity globular clusters, since such dense stellar systems need a large amount of gas to be collected in a small region (without any star formation during the collapse).  We carry out numerical simulations of low-metallicity Bonner-Ebert stable gas clouds, demonstrating that there exists a critical metallicity (between 0.001 and 0.01 $Z_\odot$) below which the cloud collapses globally without fragmentation.  We also run simulations including a background radiative heating source, showing that this can also produce clouds that do not fragment, provided the metallicity is again below a critical value which depends on the heating rate and is generally larger than the no-heating case.
 
 \end{abstract}
 
@@ -75,7 +75,7 @@ As an aside, we note that, quite recently, observations have demonstrated that g
 \section{Basic Idea}
 \label{sec:basic}
 
-In this paper, we explore a simple idea: can the cooling properties of low-metallicity gas clouds themselves influence how star formation proceeds?  High-metallicity (by which we mean approximately solar metallicity, or even lower -- we will address this point more precisely below) gas cools rapidly, typically on a timescale shorter than the dynamical time, meaning that present day large gas clouds, with masses in the GC range, are typically ``cold", with temperatures well below their virial temperatures and so rapid fragmentation is inevitable.  This generally means that high-metallicity giant molecular clouds will rapidly produce stars before they are completely collapsed and feedback from those stars will result in a low star formation efficiency (REF).  However, for a low enough metallicity, the gas may cool slowly so that the cloud will collapse coherently, not fragmenting until the central gas density is very high.  These high densities promote rapid star formation resulting in high efficiency.  In this way, paradoxically, inefficient cooling may result in more efficiency star formation.  {\bf Hoyle REF}
+In this paper, we explore a simple idea: can the cooling properties of low-metallicity gas clouds themselves influence how star formation proceeds?  High-metallicity (by which we mean approximately solar metallicity, or even lower -- we will address this point more precisely below) gas cools rapidly, typically on a timescale shorter than the dynamical time, meaning that present day large gas clouds, with masses in the GC range, are typically ``cold", with temperatures well below their virial temperatures and so rapid fragmentation is inevitable \citep{Hoyle1953}.  This generally means that high-metallicity giant molecular clouds will rapidly produce stars before they are completely collapsed and feedback from those stars will result in a low star formation efficiency \citep[e.g.,][]{McKee1989}.  However, for a low enough metallicity, the gas may cool slowly so that the cloud will collapse coherently, not fragmenting until the central gas density is very high.  These high densities promote rapid star formation resulting in high efficiency.  In this way, paradoxically, inefficient cooling may result in more efficiency star formation. 
 
 To further investigate this simple idea we have created one zone models of a cooling parcel of gas. In  this scenario, the parameter space consists of density, temperature, and metallicity. Once the parameters are chosen the evolutionary timescales are computed: the quantity of interest is the ratio of the absolute value of cooling time to dynamical time $|t_{cool}|/t_{dyn}$. In our simple one zone model, cooling is computed using the publicily available \textsc{grackle} chemistry library; details of implementation and functionality can be found
 in \cite{Bryan2014}.
@@ -121,12 +121,12 @@ The simulations in this paper were performed with the publicly available Euleria
 hydrodynamical adaptive mesh refinement Enzo code \citep{Bryan2014}. The domain
 box size of the simulation was 150 pc on a side with a top level root grid resolution of $128^3$, and
 a maximum refinement level of 3, for a minimum cell size of 0.125 pc.  Cell refinement was dictated 
-by the gas mass such that a cell was refined whenever the its mass became larger than 0.1 M$_\odot$.
+by the gas mass such that a cell was refined whenever its mass became larger than 0.1 M$_\odot$.
 In addition, we refined based on the Jeans length such that it was always refined by at least 4 cells (up until
 the maximum refinement is reached).
 
 Our simulations included self gravity and radiative cooling using the
-\textsc{grackle} library; details described in \cite{Bryan2014}. The metal cooling (and
+\textsc{grackle} library; details described in \cite{Bryan2014} and \cite{Smith2016}. The metal cooling (and
 heating) rates are computed using a non-equilibrium model for H, H$^+$, He, He$^+$, He$^++$ and e$^-$
 and a table computed from Cloudy for metal-line cooling (and heating), as described in \citet{Smith2016}.
 When a radiative background is included, we use \cite{Haardt2012} at $z=$ 0.
