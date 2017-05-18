@@ -22,10 +22,10 @@ T0 = 6000
 
 chi = 1.0
 
-sigma = 2.5 * 1e5 # 1 km/s
-L = 5.0 * 3.08e18 # 10 pc
+sigma = 7 * 1e5 #  3 km/s
+L = 10 * 3.08e18 # 10 pc
 mu = 1.22 * const.m_p.cgs
-c_s = 0.7*10.0 *(6000/10000.0)**0.5 * 1e5 # 10 km/s
+c_s = 0.8*10.0 *(6000/10000.0)**0.5 * 1e5 # 10 km/s
 MBE = 1.0e6 * 2e33 # 10^6 msun
 
 def Pleq(T, Z):
@@ -51,9 +51,14 @@ PTeq1 = PTeq(T, Z)
 
 print PBE()
 
+runZ = np.array([1e-3, 1e-2, 1e-2, 1e-2, 1e-2])
+runGamma = np.array([1e-28, 1e-28, 5e-26, 8.5e-26, 8.5e-25])
+runsym = ['+', 'o', '+', 'o', 'o']
+
 pyplot.figure(figsize=(5,4))
 pyplot.plot(T, Pleq1, color='k', ls='-', label='PLeq')
 pyplot.plot(T, PTeq1, color='k', ls='--', label='PTeq')
+
 pyplot.xscale('log')
 pyplot.yscale('log')
 pyplot.xlabel(r'Temperature (K)')
@@ -71,11 +76,13 @@ ZcritT1 = np.full_like(ZcritL1, ZcritT(MBE, T0))
 pyplot.figure(figsize=(5,4))
 pyplot.plot(Gamma, ZcritL1, color='k', ls='-', label='ZcritL')
 pyplot.plot(Gamma, ZcritT1, color='k', ls='--', label='ZcritT')
+for _x, _y, _s in zip(runGamma, runZ, runsym):
+    pyplot.scatter(_x, _y, marker=_s)
 pyplot.xscale('log')
 pyplot.yscale('log')
 pyplot.xlabel(r'$\Gamma$ (erg s cm$^{-3}$)')
 pyplot.ylabel(r'$Z_{\rm crit}$')
-pyplot.axis([1e-28,1e-24,1e-4,1])
+pyplot.axis([0.9e-28,3e-25,1e-4,0.1])
 #pyplot.legend(loc='lower left', prop=font)
 pyplot.savefig('Zcrit')
 
